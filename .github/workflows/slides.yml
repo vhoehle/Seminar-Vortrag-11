@@ -1,0 +1,30 @@
+name: Build Slides PDF
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'slides.tex'
+      - 'bibliography.bib'
+      - 'Bilder/**'
+      - 'images/**'
+  workflow_dispatch:
+
+jobs:
+  build_slides:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile slides
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: slides.tex
+
+      - name: Upload slides PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: slides-pdf
+          path: slides.pdf
