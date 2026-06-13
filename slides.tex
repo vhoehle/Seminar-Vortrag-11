@@ -77,5 +77,48 @@ Zur Erinnerung betrachten wir die bereits bekannten
 
 \end{frame}
 
+\begin{frame}{1. Rekursionen}
+
+\textbf{Erweiterung der Binomialkoeffizienten}
+
+\begin{itemize}
+    \item Wir wollen die Binomialkoeffizienten auf \(\mathbb{Z}\) und \(\mathbb{C}\) erweitern.
+    
+    \item Zunächst setzen wir
+    \[
+    \binom{0}{0}=1,
+    \]
+    da die leere Menge genau eine Teilmenge besitzt, nämlich sich selbst.
+
+    \item Außerdem setzen wir
+    \[
+    0! = 1
+    \]
+    sowie
+    \[
+    n^{\underline{0}} = n^{\overline{0}} = 1.
+    \]
+
+    \item Für die Fakultät benötigen wir zunächst \(k \geq 0\).
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Definition 1.1 (Verallgemeinerte Binomialkoeffizienten)}
+
+Für \(r\in\mathbb{C}\) und \(k\in\mathbb{Z}\) definieren wir
+
+\[
+\binom{r}{k}
+=
+\begin{cases}
+\dfrac{r(r-1)\cdots(r-k+1)}{k!},
+& k\geq 0,\\[1ex]
+0,
+& k<0.
+\end{cases}
+\]
+
+\end{frame}
 
 \end{document}
