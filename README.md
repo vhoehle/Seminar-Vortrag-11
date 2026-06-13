@@ -1,4 +1,6 @@
-# Ramsey-Theorie
+# Seminar-Vortrag-11
+
+Thema: Rekursion und Existenzaussagen
 
 Proseminar Kombinatorik
 
