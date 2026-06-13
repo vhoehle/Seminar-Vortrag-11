@@ -2,8 +2,4 @@
 
 Thema: Rekursion und Existenzaussagen
 
-Proseminar Kombinatorik
-
-Vortrag von Valerie Hoehle
-
-Sommersemester 2026
+Valerie Hoehle - Sommersemester 2026
