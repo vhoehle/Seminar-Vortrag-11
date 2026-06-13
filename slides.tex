@@ -121,4 +121,74 @@ Für \(r\in\mathbb{C}\) und \(k\in\mathbb{Z}\) definieren wir
 
 \end{frame}
 
+\begin{frame}{1. Rekursionen}
+
+\textbf{Satz 1.2 (Pascalsche Identität)}
+
+\vspace{0.3cm}
+
+Für \(r\in\mathbb{C}\) und \(k\in\mathbb{Z}\) gilt
+
+\[
+\binom{r}{k}
+=
+\binom{r-1}{k-1}
++
+\binom{r-1}{k}.
+\]
+
+\vspace{0.5cm}
+
+\textbf{Beweis:} Mittels der Polynommethode.
+
+\begin{itemize}
+    \item Für \(k<0\) gilt unmittelbar \(0=0\).
+
+    \item Für \(k=0\) gilt unmittelbar \(1=1\).
+
+    \item Sei nun \(k\geq 1\).
+\end{itemize}
+
+Wir betrachten die Identität
+
+\[
+\binom{x}{k}
+\stackrel{?}{=}
+\binom{x-1}{k-1}
++
+\binom{x-1}{k},
+\qquad x\in\mathbb{C}.
+\]
+
+Beide Seiten sind Polynome in \(x\) vom Grad \(k\).
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Beweis von Satz 1.2 (Fortsetzung)}
+
+Die beiden Polynome stimmen für alle
+\(x\in\mathbb{N}\) überein.
+
+Da zwei Polynome vom Grad höchstens \(k\),
+die an unendlich vielen Stellen übereinstimmen,
+identisch sind, folgt
+
+\[
+\binom{x}{k}
+=
+\binom{x-1}{k-1}
++
+\binom{x-1}{k}.
+\]
+
+für alle \(x\in\mathbb{C}\).
+
+Insbesondere gilt dies für \(x=r\).
+
+\hfill\(\square\)
+
+\end{frame}
+
 \end{document}
