@@ -2,4 +2,4 @@
 
 Thema: Rekursion und Existenzaussagen
 
-Valerie Hoehle - Sommersemester 2026
+Valerie Höhle - Sommersemester 2026
