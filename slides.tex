@@ -88,10 +88,9 @@ Zur Erinnerung betrachten wir die bereits bekannten
 
 \begin{frame}{1. Rekursionen}
 
-\textbf{Erweiterung der Binomialkoeffizienten}
+\textbf{Erweiterung der Binomialkoeffizienten auf \(\mathbb{Z}\) und \(\mathbb{C}\) }
 
 \begin{itemize}
-    \item Wir wollen die Binomialkoeffizienten auf \(\mathbb{Z}\) und \(\mathbb{C}\) erweitern.
     
     \item Zunächst setzen wir
     \[
@@ -113,7 +112,13 @@ Zur Erinnerung betrachten wir die bereits bekannten
 
 \vspace{0.2cm}
 
-\textbf{Definition 1.1 (Verallgemeinerte Binomialkoeffizienten)}
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Definition 1.1}
+
+\vspace{0.2cm}
 
 Für \(r\in\mathbb{C}\) und \(k\in\mathbb{Z}\) definieren wir
 
@@ -121,11 +126,19 @@ Für \(r\in\mathbb{C}\) und \(k\in\mathbb{Z}\) definieren wir
 \binom{r}{k}
 =
 \begin{cases}
-\dfrac{r(r-1)\cdots(r-k+1)}{k!},
-& k\geq 0,\\[1ex]
-0,
-& k<0.
+\dfrac{r(r-1)\cdots(r-k+1)}{k!}, & k\geq 0,\\[1ex]
+0, & k<0.
 \end{cases}
+\]
+
+\vspace{0.4cm}
+
+Die abfallende Fakultät wird definiert durch
+
+\[
+r^{\underline{k}}
+=
+r(r-1)\cdots(r-k+1).
 \]
 
 \end{frame}
