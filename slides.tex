@@ -215,11 +215,12 @@ Insbesondere gilt dies für \(x=r\).
 
 \begin{frame}{1. Rekursionen}
 
-\begin{prop}[Pascalsches Dreieck]
+\textbf{Korollar 1.3 (Pascalsches Dreieck)}
 
-Aus der Pascalschen Identität
+\vspace{0.3cm}
 
-ergibt sich für \(n,k\in\mathbb{N}_0\) das Pascalsche Dreieck:
+Aus der Pascalschen Identität ergibt sich für
+\(n,k\in\mathbb{N}_0\) das Pascalsche Dreieck:
 
 \[
 \begin{array}{c|cccccc}
@@ -234,12 +235,87 @@ n\backslash k & 0 & 1 & 2 & 3 & 4 & 5\\
 \end{array}
 \]
 
-\end{prop}
+\vspace{0.2cm}
+
+Jeder Eintrag ergibt sich als Summe der beiden darüberliegenden Einträge.
+
+\end{frame}
 
 \vspace{0.2cm}
 
 Jeder Eintrag ergibt sich als Summe der beiden darüberliegenden Einträge.
 
 \end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Korollar 1.4 (Zeilensumme)}
+
+\vspace{0.3cm}
+
+Für \(n\in\mathbb N_0\) gilt
+
+\[
+\sum_{k=0}^{n}\binom{n}{k}=2^n.
+\]
+
+\vspace{0.3cm}
+
+\textbf{Beweisidee:}
+
+Vollständige Induktion über \(n\).
+
+Unter Verwendung der Pascalschen Identität erhält man
+
+\[
+\sum_{k=0}^{n+1}\binom{n+1}{k}
+=
+2\sum_{k=0}^{n}\binom{n}{k}.
+\]
+
+Mit der Induktionsvoraussetzung folgt
+
+\[
+2\cdot 2^n = 2^{n+1}.
+\]
+
+\hfill\(\square\)
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Korollar 1.5 (Spaltensumme)}
+
+\vspace{0.3cm}
+
+Für \(n,k\ge 0\) gilt
+
+\[
+\sum_{m=0}^{n}\binom{m}{k}
+=
+\binom{n+1}{k+1}.
+\]
+
+\vspace{0.5cm}
+
+\textbf{Korollar 1.6 (Diagonalsumme)}
+
+\vspace{0.3cm}
+
+Für \(m,n\ge 0\) gilt
+
+\[
+\sum_{k=0}^{n}\binom{m+k}{k}
+=
+\binom{m+n+1}{n}.
+\]
+
+\vspace{0.4cm}
+
+\textit{Die Beweise erfolgen analog durch vollständige Induktion und sind in der Ausarbeitung enthalten.}
+
+\end{frame}
+
 
 \end{document}
