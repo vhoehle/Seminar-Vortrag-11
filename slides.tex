@@ -280,6 +280,7 @@ Per vollständiger Induktion über \(n\).
 
 \[
 \text{I.V.:}\qquad
+\exists n\in\mathbb N_0:
 \sum_{k=0}^{n}\binom{n}{k}
 =
 2^n.
@@ -289,7 +290,10 @@ Per vollständiger Induktion über \(n\).
 
 \[
 \text{I.S.:}\qquad
+\text{Zu zeigen: }
 \sum_{k=0}^{n+1}\binom{n+1}{k}
+=
+2^{n+1}.
 \]
 
 Mit der Pascalschen Identität folgt
@@ -358,7 +362,7 @@ Für \(m,n\ge 0\) gilt
 
 \vspace{0.3cm}
 
-Für \(r\in\mathbb{C}\) und \(k\in\mathbb{Z}\) gilt
+Für \(r\in\mathbb C\) und \(k\in\mathbb Z\) gilt
 
 \[
 \binom{-r}{k}
@@ -369,7 +373,31 @@ Für \(r\in\mathbb{C}\) und \(k\in\mathbb{Z}\) gilt
 
 \vspace{0.4cm}
 
-\textit{Beweis s. Ausarbeitung.}
+\textbf{Beweis.}
+
+\[
+(-x)^{\underline{k}}
+=
+(-x)(-x-1)\cdots(-x-k+1)
+\]
+
+\[
+=
+(-1)^k\,x(x+1)\cdots(x+k-1)
+\]
+
+\[
+=
+(-1)^k\,x^{\overline{k}}.
+\]
+
+(Reziprozitätsgesetz)
+
+\vspace{0.2cm}
+
+Durch Division durch \(k!\) folgt die Behauptung.
+
+\hfill\(\square\)
 
 \end{frame}
 
@@ -390,9 +418,21 @@ Für \(m,n\in\mathbb N_0\) gilt
 \binom{n-1}{m}.
 \]
 
-\vspace{0.4cm}
+\vspace{0.5cm}
 
-\textit{Beweis folgt nach Binomialsatz s. Ausarbeitung.}
+Insbesondere folgt für \(m=n\)
+
+\[
+\sum_{k=0}^{n}
+(-1)^k
+\binom{n}{k}
+=
+0.
+\]
+
+\vspace{0.5cm}
+
+\textit{Beweis siehe Ausarbeitung.}
 
 \end{frame}
 
@@ -499,6 +539,123 @@ so erhält man
 \sum_{k=0}^{n}
 \binom{n}{k}
 x^k y^{\,n-k}.
+\]
+
+\hfill\(\square\)
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Satz 1.10 (Vandermonde-Identität)}
+
+\vspace{0.3cm}
+
+Für \(r,s\in\mathbb N_0\) und \(n\geq 0\) gilt
+
+\[
+\binom{r+s}{n}
+=
+\sum_{k=0}^{n}
+\binom{r}{k}
+\binom{s}{n-k}.
+\]
+
+\vspace{0.5cm}
+
+\textbf{Beweis.}
+
+Zunächst betrachten wir zwei disjunkte Mengen
+
+\[
+R \cap S = \varnothing
+\]
+
+mit
+
+\[
+|R| = r,
+\qquad
+|S| = s.
+\]
+
+Wir zählen die Anzahl der Möglichkeiten,
+\(n\) Elemente aus der Vereinigung
+
+\[
+R \cup S
+\]
+
+auszuwählen.
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Beweis von Satz 1.10 (Fortsetzung)}
+
+\vspace{0.3cm}
+
+Einerseits können wir direkt \(n\) Elemente aus
+\(R\cup S\) auswählen.
+
+Dies ist auf
+
+\[
+\binom{r+s}{n}
+\]
+
+Arten möglich.
+
+\vspace{0.4cm}
+
+Andererseits können wir zunächst festlegen,
+wie viele der ausgewählten Elemente aus \(R\)
+stammen.
+
+Seien dies \(k\) Elemente.
+
+Dann müssen die verbleibenden
+
+\[
+n-k
+\]
+
+Elemente aus \(S\) stammen.
+
+\vspace{0.4cm}
+
+Dafür gibt es
+
+\[
+\binom{r}{k}
+\binom{s}{n-k}
+\]
+
+Möglichkeiten.
+
+Durch Summation über alle
+
+\[
+k=0,\ldots,n
+\]
+
+erhalten wir
+
+\[
+\sum_{k=0}^{n}
+\binom{r}{k}
+\binom{s}{n-k}.
+\]
+
+Da beide Ausdrücke dieselbe Menge zählen, folgt
+
+\[
+\binom{r+s}{n}
+=
+\sum_{k=0}^{n}
+\binom{r}{k}
+\binom{s}{n-k}.
 \]
 
 \hfill\(\square\)
