@@ -662,4 +662,200 @@ Da beide Ausdrücke dieselbe Menge zählen, folgt
 
 \end{frame}
 
+\begin{frame}{1. Rekursionen}
+
+\textbf{Definition 1.11 (Stirling-Zahlen erster Art)}
+
+\vspace{0.3cm}
+
+Die Stirling-Zahl erster Art
+
+\[
+s_{n,k}
+\]
+
+gibt die Anzahl der Permutationen einer
+\(n\)-elementigen Menge an, die genau
+\(k\) Zyklen besitzen.
+
+\vspace{0.4cm}
+
+Es gelten die Anfangswerte
+
+\[
+s_{0,0}=1,
+\qquad
+s_{0,k}=0 \ (k>0),
+\qquad
+s_{n,0}=0 \ (n>0).
+\]
+
+\vspace{0.4cm}
+
+\textbf{Beispiel:}
+
+\[
+s_{3,2}=3.
+\]
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Satz 1.12 (Rekursion erster Art)}
+
+\vspace{0.3cm}
+
+Für \(n,k>0\) gilt
+
+\[
+s_{n,k}
+=
+s_{n-1,k-1}
++
+(n-1)s_{n-1,k}.
+\]
+
+\vspace{0.3cm}
+
+\textbf{Beweis.}
+
+Betrachte das Element \(n\).
+
+\begin{itemize}
+\item Es bildet einen eigenen Zyklus.
+
+Dann besitzen die übrigen \(n-1\) Elemente
+genau \(k-1\) Zyklen.
+
+\[
+s_{n-1,k-1}
+\]
+
+Möglichkeiten.
+
+\item Das Element \(n\) wird in einen vorhandenen
+Zyklus eingefügt.
+
+Für jede Permutation mit \(k\) Zyklen gibt es
+\(n-1\) Einfügemöglichkeiten.
+
+\[
+(n-1)s_{n-1,k}
+\]
+
+Möglichkeiten.
+\end{itemize}
+
+Durch Addition folgt die Behauptung.
+
+\hfill\(\square\)
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Definition 1.13 (Stirling-Zahlen zweiter Art)}
+
+\vspace{0.3cm}
+
+Die Stirling-Zahl zweiter Art
+
+\[
+S_{n,k}
+\]
+
+gibt die Anzahl der Partitionen einer
+\(n\)-elementigen Menge in genau
+\(k\) nichtleere Teilmengen an.
+
+\vspace{0.4cm}
+
+Es gelten
+
+\[
+S_{0,0}=1,
+\qquad
+S_{0,k}=0 \ (k>0),
+\qquad
+S_{n,0}=0 \ (n>0).
+\]
+
+\vspace{0.4cm}
+
+\textbf{Beispiel:}
+
+\[
+S_{3,2}=3.
+\]
+
+\[
+\{1\}\{2,3\},
+\quad
+\{2\}\{1,3\},
+\quad
+\{3\}\{1,2\}.
+\]
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Satz 1.14 (Rekursion zweiter Art)}
+
+\vspace{0.3cm}
+
+Für \(n,k>0\) gilt
+
+\[
+S_{n,k}
+=
+S_{n-1,k-1}
++
+kS_{n-1,k}.
+\]
+
+\vspace{0.4cm}
+
+\textbf{Beweisidee.}
+
+Betrachte das Element \(n\).
+
+\begin{itemize}
+\item \(n\) bildet eine eigene Teilmenge.
+
+\[
+S_{n-1,k-1}
+\]
+
+Möglichkeiten.
+
+\item \(n\) wird einer vorhandenen
+Teilmenge hinzugefügt.
+
+Für jede Partition gibt es dafür
+
+\[
+k
+\]
+
+Möglichkeiten.
+
+\[
+kS_{n-1,k}
+\]
+
+Möglichkeiten.
+\end{itemize}
+
+\[
+S_{n,k}
+=
+S_{n-1,k-1}
++
+kS_{n-1,k}.
+\]
+
+\end{frame}
+
 \end{document}
