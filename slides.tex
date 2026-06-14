@@ -702,9 +702,9 @@ s_{3,2}=3.
 
 \begin{frame}{1. Rekursionen}
 
-\textbf{Satz 1.12 (Rekursion erster Art)}
+\textbf{Satz 1.12 (Stirling-Zahlen erster Art)}
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
 Für \(n,k>0\) gilt
 
@@ -718,36 +718,63 @@ s_{n-1,k-1}
 
 \vspace{0.3cm}
 
-\textbf{Beweis.}
+\textbf{Beweis:}
 
-Betrachte das Element \(n\).
+Sei \(N\) eine \(n\)-elementige Menge und \(a\in N\) fest gewählt.
+
+Wir unterscheiden zwei Fälle:
 
 \begin{itemize}
-\item Es bildet einen eigenen Zyklus.
+    \item \textbf{Fall 1:} \((a)\) ist ein eigener Zyklus.
 
-Dann besitzen die übrigen \(n-1\) Elemente
-genau \(k-1\) Zyklen.
+    Dann bilden die restlichen \(n-1\) Elemente genau \(k-1\) Zyklen.
 
-\[
-s_{n-1,k-1}
-\]
+    \[
+    s_{n-1,k-1}
+    \]
 
-Möglichkeiten.
+    Möglichkeiten.
 
-\item Das Element \(n\) wird in einen vorhandenen
-Zyklus eingefügt.
+    \item \textbf{Fall 2:} \(a\) liegt mit anderen Elementen in einem Zyklus.
 
-Für jede Permutation mit \(k\) Zyklen gibt es
-\(n-1\) Einfügemöglichkeiten.
+    Dann bilden die restlichen \(n-1\) Elemente weiterhin \(k\) Zyklen.
+
+    Dafür gibt es
+
+    \[
+    s_{n-1,k}
+    \]
+
+    Möglichkeiten.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Beweis von Satz 1.12 (Fortsetzung)}
+
+Im zweiten Fall kann \(a\) vor jedem der übrigen \(n-1\) Elemente eingefügt werden.
+
+Damit ergeben sich
 
 \[
 (n-1)s_{n-1,k}
 \]
 
 Möglichkeiten.
-\end{itemize}
 
-Durch Addition folgt die Behauptung.
+\vspace{0.3cm}
+
+Durch Addition der beiden Fälle folgt
+
+\[
+s_{n,k}
+=
+s_{n-1,k-1}
++
+(n-1)s_{n-1,k}.
+\]
 
 \hfill\(\square\)
 
@@ -801,9 +828,9 @@ S_{3,2}=3.
 
 \begin{frame}{1. Rekursionen}
 
-\textbf{Satz 1.14 (Rekursion zweiter Art)}
+\textbf{Satz 1.14 (Stirling-Zahlen zweiter Art)}
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
 Für \(n,k>0\) gilt
 
@@ -815,38 +842,57 @@ S_{n-1,k-1}
 kS_{n-1,k}.
 \]
 
-\vspace{0.4cm}
+\vspace{0.3cm}
 
-\textbf{Beweisidee.}
+\textbf{Beweis:}
 
-Betrachte das Element \(n\).
+Sei \(N\) eine \(n\)-elementige Menge und \(a\in N\) fest gewählt.
+
+Wir betrachten alle \(k\)-Partitionen von \(N\).
+
+Wir unterscheiden zwei Fälle:
 
 \begin{itemize}
-\item \(n\) bildet eine eigene Teilmenge.
+    \item \textbf{Fall 1:} \(a\) bildet einen Einzelblock.
 
-\[
-S_{n-1,k-1}
-\]
+    Dann bleiben \(n-1\) Elemente übrig, die in \(k-1\) Blöcke zerlegt werden.
 
-Möglichkeiten.
+    \[
+    S_{n-1,k-1}
+    \]
 
-\item \(n\) wird einer vorhandenen
-Teilmenge hinzugefügt.
+    Möglichkeiten.
 
-Für jede Partition gibt es dafür
+    \item \textbf{Fall 2:} \(a\) liegt zusammen mit anderen Elementen in einem Block.
 
-\[
-k
-\]
+    Dann bleiben \(n-1\) Elemente übrig, die in \(k\) Blöcke zerlegt werden.
 
-Möglichkeiten.
+    \[
+    S_{n-1,k}
+    \]
+
+    Möglichkeiten.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Beweis von Satz 1.14 (Fortsetzung)}
+
+Im zweiten Fall kann \(a\) zu einem der \(k\) Blöcke hinzugefügt werden.
+
+Damit ergeben sich
 
 \[
 kS_{n-1,k}
 \]
 
 Möglichkeiten.
-\end{itemize}
+
+\vspace{0.3cm}
+
+Durch Addition der beiden Fälle folgt
 
 \[
 S_{n,k}
@@ -855,6 +901,8 @@ S_{n-1,k-1}
 +
 kS_{n-1,k}.
 \]
+
+\hfill\(\square\)
 
 \end{frame}
 
