@@ -253,13 +253,46 @@ Für \(n\in\mathbb N_0\) gilt
 \sum_{k=0}^{n}\binom{n}{k}=2^n.
 \]
 
+\vspace{0.5cm}
+
+\textbf{Beweis.}
+
+Per vollständiger Induktion über \(n\).
+
+\[
+\text{I.A.:}\qquad
+\sum_{k=0}^{0}\binom{0}{k}
+=
+\binom{0}{0}
+=
+1
+=
+2^0.
+\]
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Beweis von Korollar 1.4 (Fortsetzung)}
+
 \vspace{0.3cm}
 
-\textbf{Beweisidee:}
+\[
+\text{I.V.:}\qquad
+\sum_{k=0}^{n}\binom{n}{k}
+=
+2^n.
+\]
 
-Vollständige Induktion über \(n\).
+\vspace{0.3cm}
 
-Unter Verwendung der Pascalschen Identität erhält man
+\[
+\text{I.S.:}\qquad
+\sum_{k=0}^{n+1}\binom{n+1}{k}
+\]
+
+Mit der Pascalschen Identität folgt
 
 \[
 \sum_{k=0}^{n+1}\binom{n+1}{k}
@@ -267,10 +300,14 @@ Unter Verwendung der Pascalschen Identität erhält man
 2\sum_{k=0}^{n}\binom{n}{k}.
 \]
 
-Mit der Induktionsvoraussetzung folgt
+Mit der Induktionsvoraussetzung ergibt sich
 
 \[
-2\cdot 2^n = 2^{n+1}.
+2\sum_{k=0}^{n}\binom{n}{k}
+=
+2\cdot 2^n
+=
+2^{n+1}.
 \]
 
 \hfill\(\square\)
@@ -291,6 +328,10 @@ Für \(n,k\ge 0\) gilt
 \binom{n+1}{k+1}.
 \]
 
+\vspace{0.2cm}
+
+\textit{Beweis siehe Ausarbeitung.}
+
 \vspace{0.5cm}
 
 \textbf{Korollar 1.6 (Diagonalsumme)}
@@ -305,11 +346,163 @@ Für \(m,n\ge 0\) gilt
 \binom{m+n+1}{n}.
 \]
 
-\vspace{0.4cm}
+\vspace{0.2cm}
 
-\textit{Die Beweise erfolgen analog durch vollständige Induktion und sind in der Ausarbeitung enthalten.}
+\textit{Beweis siehe Ausarbeitung.}
 
 \end{frame}
 
+\begin{frame}{1. Rekursionen}
+
+\textbf{Korollar 1.7 (Negation)}
+
+\vspace{0.3cm}
+
+Für \(r\in\mathbb{C}\) und \(k\in\mathbb{Z}\) gilt
+
+\[
+\binom{-r}{k}
+=
+(-1)^k
+\binom{r+k-1}{k}.
+\]
+
+\vspace{0.4cm}
+
+\textit{Beweis siehe Ausarbeitung.}
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Korollar 1.8 (Alternierende Zeilensumme)}
+
+\vspace{0.3cm}
+
+Für \(m,n\in\mathbb N_0\) gilt
+
+\[
+\sum_{k=0}^{m}
+(-1)^k
+\binom{n}{k}
+=
+(-1)^m
+\binom{n-1}{m}.
+\]
+
+\vspace{0.4cm}
+
+\textit{Beweis siehe Ausarbeitung.}
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Satz 1.9 (Binomialsatz)}
+
+\vspace{0.3cm}
+
+Für \(n\geq 0\) gilt
+
+\[
+(x+y)^n
+=
+\sum_{k=0}^{n}
+\binom{n}{k}
+x^k y^{\,n-k}.
+\]
+
+\vspace{0.5cm}
+
+Insbesondere folgt für \(y=1\)
+
+\[
+(x+1)^n
+=
+\sum_{k=0}^{n}
+\binom{n}{k}
+x^k.
+\]
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Beweis von Satz 1.9}
+
+\vspace{0.3cm}
+
+Schreiben wir
+
+\[
+(x+y)^n
+=
+\underbrace{(x+y)\cdots(x+y)}_{n\text{-mal}}.
+\]
+
+Beim Ausmultiplizieren wählen wir aus jedem Faktor
+entweder \(x\) oder \(y\).
+
+\vspace{0.3cm}
+
+Ein Term der Form
+
+\[
+x^k y^{\,n-k}
+\]
+
+entsteht genau dann, wenn aus genau \(k\) der
+\(n\) Faktoren ein \(x\) gewählt wird und aus den
+restlichen \(n-k\) Faktoren ein \(y\).
+
+\vspace{0.3cm}
+
+Die Anzahl dieser Möglichkeiten beträgt
+
+\[
+\binom{n}{k}.
+\]
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Beweis von Satz 1.9 (Fortsetzung)}
+
+\vspace{0.3cm}
+
+Somit erscheint der Term
+
+\[
+x^k y^{\,n-k}
+\]
+
+mit dem Koeffizienten
+
+\[
+\binom{n}{k}.
+\]
+
+\vspace{0.4cm}
+
+Summiert man über alle möglichen Werte
+
+\[
+k=0,\dots,n,
+\]
+
+so erhält man
+
+\[
+(x+y)^n
+=
+\sum_{k=0}^{n}
+\binom{n}{k}
+x^k y^{\,n-k}.
+\]
+
+\hfill\(\square\)
+
+\end{frame}
 
 \end{document}
