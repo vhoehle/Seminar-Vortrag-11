@@ -432,7 +432,7 @@ Insbesondere folgt für \(m=n\)
 
 \vspace{0.5cm}
 
-\textit{Beweis siehe Ausarbeitung.}
+\textit{Beweis s. Ausarbeitung.}
 
 \end{frame}
 
@@ -549,9 +549,9 @@ x^k y^{\,n-k}.
 
 \textbf{Satz 1.10 (Vandermonde-Identität)}
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
-Für \(r,s\in\mathbb N_0\) und \(n\geq 0\) gilt
+Für \(r,s,n\in\mathbb N_0\) gilt
 
 \[
 \binom{r+s}{n}
@@ -561,32 +561,21 @@ Für \(r,s\in\mathbb N_0\) und \(n\geq 0\) gilt
 \binom{s}{n-k}.
 \]
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 
 \textbf{Beweis.}
 
-Zunächst betrachten wir zwei disjunkte Mengen
+Zunächst betrachten wir den Fall
+\(r,s\in\mathbb N_0\).
+
+Seien \(R\) und \(S\) disjunkte Mengen mit
 
 \[
-R \cap S = \varnothing
-\]
-
-mit
-
-\[
-|R| = r,
-\qquad
-|S| = s.
+|R|=r,\qquad |S|=s.
 \]
 
 Wir zählen die Anzahl der Möglichkeiten,
-\(n\) Elemente aus der Vereinigung
-
-\[
-R \cup S
-\]
-
-auszuwählen.
+\(n\) Elemente aus \(R\cup S\) auszuwählen.
 
 \end{frame}
 
@@ -594,68 +583,55 @@ auszuwählen.
 
 \textbf{Beweis von Satz 1.10 (Fortsetzung)}
 
-\vspace{0.3cm}
-
-Einerseits können wir direkt \(n\) Elemente aus
-\(R\cup S\) auswählen.
-
-Dies ist auf
+\begin{enumerate}
+\item Direkte Auswahl von \(n\) Elementen aus \(R\cup S\):
 
 \[
 \binom{r+s}{n}
 \]
 
-Arten möglich.
+Möglichkeiten.
 
-\vspace{0.4cm}
+\vspace{0.2cm}
 
-Andererseits können wir zunächst festlegen,
-wie viele der ausgewählten Elemente aus \(R\)
-stammen.
+\item Sei \(k\) die Anzahl der ausgewählten Elemente aus \(R\).
 
-Seien dies \(k\) Elemente.
+Dann stammen \(n-k\) Elemente aus \(S\).
 
-Dann müssen die verbleibenden
+Aus \(R\): \(\binom{r}{k}\) Möglichkeiten,
+
+aus \(S\): \(\binom{s}{n-k}\) Möglichkeiten.
+
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Beweis von Satz 1.10 (Fortsetzung)}
+
+Nach der Produktregel gibt es für festes \(k\)
 
 \[
-n-k
-\]
-
-Elemente aus \(S\) stammen.
-
-\vspace{0.4cm}
-
-Dafür gibt es
-
-\[
-\binom{r}{k}
-\binom{s}{n-k}
+\binom{r}{k}\binom{s}{n-k}
 \]
 
 Möglichkeiten.
 
-Durch Summation über alle
-
-\[
-k=0,\ldots,n
-\]
-
-erhalten wir
+Summation über alle \(k=0,\ldots,n\) ergibt
 
 \[
 \sum_{k=0}^{n}
-\binom{r}{k}
-\binom{s}{n-k}.
+\binom{r}{k}\binom{s}{n-k}.
 \]
 
-Da beide Ausdrücke dieselbe Menge zählen, folgt
+Da beide Zählweisen dieselbe Menge erfassen, folgt
 
 \[
 \binom{r+s}{n}
 =
 \sum_{k=0}^{n}
-\binom{r}{k}
-\binom{s}{n-k}.
+\binom{r}{k}\binom{s}{n-k}.
 \]
 
 \hfill\(\square\)
@@ -695,7 +671,7 @@ s_{n,0}=0 \ (n>0).
 \textbf{Beispiel:}
 
 \[
-s_{3,2}=3.
+s_{4,3}=6.
 \]
 
 \end{frame}
@@ -735,6 +711,16 @@ Wir unterscheiden zwei Fälle:
 
     Möglichkeiten.
 
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Beweis von Satz 1.12 (Fortsetzung)}
+
+\begin{itemize}
+
     \item \textbf{Fall 2:} \(a\) liegt mit anderen Elementen in einem Zyklus.
 
     Dann bilden die restlichen \(n-1\) Elemente weiterhin \(k\) Zyklen.
@@ -746,35 +732,22 @@ Wir unterscheiden zwei Fälle:
     \]
 
     Möglichkeiten.
+
+    Im zweiten Fall kann \(a\) vor jedem der übrigen \(n-1\) Elemente eingefügt werden.
+
+    Damit ergeben sich
+
+    \[
+    (n-1)s_{n-1,k}
+    \]
+
+    Möglichkeiten.
+
 \end{itemize}
-
-\end{frame}
-
-\begin{frame}{1. Rekursionen}
-
-\textbf{Beweis von Satz 1.12 (Fortsetzung)}
-
-Im zweiten Fall kann \(a\) vor jedem der übrigen \(n-1\) Elemente eingefügt werden.
-
-Damit ergeben sich
-
-\[
-(n-1)s_{n-1,k}
-\]
-
-Möglichkeiten.
 
 \vspace{0.3cm}
 
-Durch Addition der beiden Fälle folgt
-
-\[
-s_{n,k}
-=
-s_{n-1,k-1}
-+
-(n-1)s_{n-1,k}.
-\]
+Addition der beiden Fälle ergibt \(s_{n,k}=s_{n-1,k-1}+(n-1)s_{n-1,k}\)
 
 \hfill\(\square\)
 
@@ -808,20 +781,10 @@ S_{0,k}=0 \ (k>0),
 S_{n,0}=0 \ (n>0).
 \]
 
-\vspace{0.4cm}
-
-\textbf{Beispiel:}
+\textbf{Beispiel}
 
 \[
 S_{3,2}=3.
-\]
-
-\[
-\{1\}\{2,3\},
-\quad
-\{2\}\{1,3\},
-\quad
-\{3\}\{1,2\}.
 \]
 
 \end{frame}
@@ -863,6 +826,16 @@ Wir unterscheiden zwei Fälle:
 
     Möglichkeiten.
 
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Beweis von Satz 1.14 (Fortsetzung)}
+
+\begin{itemize}
+
     \item \textbf{Fall 2:} \(a\) liegt zusammen mit anderen Elementen in einem Block.
 
     Dann bleiben \(n-1\) Elemente übrig, die in \(k\) Blöcke zerlegt werden.
@@ -872,35 +845,22 @@ Wir unterscheiden zwei Fälle:
     \]
 
     Möglichkeiten.
-\end{itemize}
 
-\end{frame}
+    Im zweiten Fall kann \(a\) zu einem der \(k\) Blöcke hinzugefügt werden.
 
-\begin{frame}{1. Rekursionen}
+    Damit ergeben sich
 
-\textbf{Beweis von Satz 1.14 (Fortsetzung)}
+    \[
+    kS_{n-1,k}
+    \]
 
-Im zweiten Fall kann \(a\) zu einem der \(k\) Blöcke hinzugefügt werden.
-
-Damit ergeben sich
-
-\[
-kS_{n-1,k}
-\]
-
-Möglichkeiten.
+    Möglichkeiten.
+    
+\end{itemize}   
 
 \vspace{0.3cm}
 
-Durch Addition der beiden Fälle folgt
-
-\[
-S_{n,k}
-=
-S_{n-1,k-1}
-+
-kS_{n-1,k}.
-\]
+Die Addition der beiden Fälle ergibt \(S_{n,k}=S_{n-1,k-1}+kS_{n-1,k}\).
 
 \hfill\(\square\)
 
