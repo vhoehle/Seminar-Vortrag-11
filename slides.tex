@@ -866,4 +866,124 @@ Die Addition der beiden Fälle ergibt \(S_{n,k}=S_{n-1,k-1}+kS_{n-1,k}\).
 
 \end{frame}
 
+\begin{frame}{Überblick}
+
+1. Rekursionen
+
+\vspace{0.4cm}
+
+\textbf{2. Diskrete Wahrscheinlichkeitsrechnung}
+\begin{itemize}
+    \item Wahrscheinlichkeitsraum
+    \item Zufallsvariablen
+    \item Erwartungswert
+\end{itemize}
+
+\vspace{0.4cm}
+
+3. Existenzaussagen
+
+\end{frame}
+
+\begin{frame}{2. Diskrete Wahrscheinlichkeitsrechnung}
+
+\textbf{Motivation}
+
+\begin{itemize}
+    \item Berechnung von Wahrscheinlichkeiten bei Zufallsexperimenten
+    \item Grundlage für Zufallsalgorithmen
+    \item Anwendungen in der Kryptographie
+    \item Modellierung zufälliger Prozesse
+\end{itemize}
+
+\vspace{0.3cm}
+
+Die diskrete Wahrscheinlichkeitsrechnung basiert auf
+Abzählmethoden der Kombinatorik.
+
+\end{frame}
+
+\begin{frame}{2. Diskrete Wahrscheinlichkeitsrechnung}
+
+\textbf{Definition 2.1}
+
+\vspace{0.2cm}
+
+\textbf{a) Wahrscheinlichkeitsraum}
+
+Ein Wahrscheinlichkeitsraum besteht aus einer endlichen Menge
+\(\Omega\) und einer Abbildung
+
+\[
+p:\Omega\to[0,1]
+\]
+
+mit
+
+\[
+\sum_{\omega\in\Omega}p(\omega)=1.
+\]
+
+\vspace{0.2cm}
+
+\textbf{b) Wahrscheinlichkeitsverteilung}
+
+Die Abbildung \(p\) heißt Wahrscheinlichkeitsverteilung auf \(\Omega\).
+
+\vspace{0.2cm}
+
+\textbf{c) Ereignis}
+
+Ein Ereignis ist eine Teilmenge \(A\subseteq\Omega\).
+
+Für ein Ereignis gilt
+
+\[
+p(A)=\sum_{\omega\in A}p(\omega).
+\]
+
+\end{frame}
+
+\begin{frame}{2. Diskrete Wahrscheinlichkeitsrechnung}
+
+\textbf{Beispiel (Würfelwurf)}
+
+\vspace{0.3cm}
+
+Wir betrachten das Zufallsexperiment
+\glqq Würfel werfen\grqq.
+
+\vspace{0.3cm}
+
+Der Ergebnisraum lautet
+
+\[
+\Omega=\{1,2,3,4,5,6\}.
+\]
+
+\vspace{0.4cm}
+
+\textbf{Idealer Würfel}
+
+\[
+p(\omega)=\frac16
+\qquad (\omega\in\Omega).
+\]
+
+\vspace{0.4cm}
+
+\textbf{Gezinkter Würfel}
+
+\[
+p(1)=p(4)=\frac14,
+\qquad
+p(2)=p(5)=p(6)=\frac1{10},
+\qquad
+p(3)=\frac15.
+\]
+
+\end{frame}
+
+
+
 \end{document}
