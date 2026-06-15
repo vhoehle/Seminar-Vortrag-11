@@ -1026,6 +1026,254 @@ p\!\left(\bigcup_i A_i\right)
 
 \end{frame}
 
+% Definition 2.3
+\begin{frame}{2. Diskrete Wahrscheinlichkeitsrechnung}
+
+\textbf{Definition 2.3 (Uniformer Wahrscheinlichkeitsraum)}
+
+\vspace{0.3cm}
+
+Ein Wahrscheinlichkeitsraum heißt \emph{uniform}, wenn alle Ergebnisse gleich wahrscheinlich sind, also
+
+\[
+p(\omega)=\frac{1}{|\Omega|}
+\qquad (\omega\in\Omega).
+\]
+
+\vspace{0.3cm}
+
+Man nennt \(p\) dann die Gleichverteilung auf \(\Omega\).
+
+\vspace{0.3cm}
+
+Für ein Ereignis \(A\subseteq\Omega\) gilt
+
+\[
+p(A)=\frac{|A|}{|\Omega|}.
+\]
+
+\end{frame}
+
+\begin{frame}{2. Diskrete Wahrscheinlichkeitsrechnung}
+
+\textbf{Satz 2.4 (Produktregel)}
+
+\vspace{0.3cm}
+
+Zwei Zufallsexperimente heißen unabhängig, wenn
+
+\[
+p(\omega_1,\omega_2)
+=
+p(\omega_1)\,p(\omega_2)
+\]
+
+für alle \((\omega_1,\omega_2)\in\Omega_1\times\Omega_2\) gilt.
+
+\vspace{0.3cm}
+
+Dann folgt für Ereignisse \(A\subseteq\Omega_1\) und
+\(B\subseteq\Omega_2\)
+
+\[
+p(A,B)=p(A)\,p(B).
+\]
+
+\vspace{0.4cm}
+
+Allgemeiner gilt für unabhängige Ereignisse
+\(A_1,\ldots,A_m\)
+
+\[
+p(A_1,\ldots,A_m)
+=
+\prod_{i=1}^{m} p(A_i).
+\]
+
+\end{frame}
+
+% Beweis Satz 2.4
+\begin{frame}{2. Diskrete Wahrscheinlichkeitsrechnung}
+
+\textbf{Beweis von Satz 2.4}
+
+\vspace{0.3cm}
+
+Seien \(A\subseteq\Omega_1\) und \(B\subseteq\Omega_2\).
+
+Dann gilt
+
+\[
+p(A,B)
+=
+\sum_{(\omega_1,\omega_2)\in A\times B}
+p(\omega_1,\omega_2).
+\]
+
+Wegen der Unabhängigkeit folgt
+
+\[
+p(\omega_1,\omega_2)
+=
+p(\omega_1)\,p(\omega_2).
+\]
+
+Damit erhalten wir
+
+\[
+p(A,B)
+=
+\sum_{\omega_1\in A}
+\sum_{\omega_2\in B}
+p(\omega_1)p(\omega_2).
+\]
+
+\end{frame}
+
+% Beweis Satz 2.4 Fortsetzung
+\begin{frame}{2. Diskrete Wahrscheinlichkeitsrechnung}
+
+\textbf{Beweis von Satz 2.4 (Fortsetzung)}
+
+\[
+p(A,B)
+=
+\sum_{\omega_1\in A}
+\sum_{\omega_2\in B}
+p(\omega_1)p(\omega_2)
+\]
+
+\[
+=
+\left(
+\sum_{\omega_1\in A}p(\omega_1)
+\right)
+\left(
+\sum_{\omega_2\in B}p(\omega_2)
+\right).
+\]
+
+Nach Definition der Wahrscheinlichkeit ergibt sich
+
+\[
+p(A,B)=p(A)\,p(B).
+\]
+
+\hfill\(\square\)
+
+\end{frame}
+
+\begin{frame}{2. Diskrete Wahrscheinlichkeitsrechnung}
+
+\textbf{Definition 2.5 (Zufallsvariable)}
+
+\vspace{0.3cm}
+
+Eine Zufallsvariable ist eine Abbildung
+
+\[
+X:\Omega\rightarrow\mathbb{R}.
+\]
+
+Jedem Ergebnis \(\omega\in\Omega\) wird eine Zahl
+\(X(\omega)\) zugeordnet.
+
+\vspace{0.3cm}
+
+Für \(x\in X(\Omega)\) definieren wir die von \(X\)
+induzierte Verteilung durch
+
+\[
+p_X(x)
+=
+p(X=x)
+=
+\sum_{X(\omega)=x} p(\omega).
+\]
+
+\vspace{0.3cm}
+
+Es gilt
+
+\[
+\sum_{x\in X(\Omega)} p_X(x)=1.
+\]
+
+Damit ist \(p_X\) wieder eine Wahrscheinlichkeitsverteilung.
+
+\end{frame}
+
+\begin{frame}{2. Diskrete Wahrscheinlichkeitsrechnung}
+
+\textbf{Beispiel}
+
+\vspace{0.2cm}
+
+Wir werfen zweimal einen Würfel und betrachten die Summe
+der Augenzahlen.
+
+\[
+X:\{1,\ldots,6\}^2\rightarrow\{2,\ldots,12\},
+\qquad
+X(\omega_1,\omega_2)=\omega_1+\omega_2.
+\]
+
+Beispielsweise gilt
+
+\[
+X(3,5)=8.
+\]
+
+\vspace{0.3cm}
+
+\textbf{Fairer Würfel:}
+
+Die von \(X\) induzierte Verteilung lautet:
+
+\begin{center}
+\small
+\begin{tabular}{c|ccccccccccc}
+$s$ & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12\\
+\hline
+$p_{00}(X=s)$
+&
+\frac1{36}
+&
+\frac2{36}
+&
+\frac3{36}
+&
+\frac4{36}
+&
+\frac5{36}
+&
+\frac6{36}
+&
+\frac5{36}
+&
+\frac4{36}
+&
+\frac3{36}
+&
+\frac2{36}
+&
+\frac1{36}
+\end{tabular}
+\end{center}
+
+\vspace{0.2cm}
+
+\[
+p_X(4)
+=
+p(1,3)+p(2,2)+p(3,1)
+=
+\frac{3}{36}
+=
+\frac{1}{12}.
+\]
+
+\end{frame}
 
 
 \end{document}
