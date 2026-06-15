@@ -1571,4 +1571,377 @@ streuen die Werte von \(X\) wesentlich stärker als die von \(Y\).
 
 \end{frame}
 
+\begin{frame}{3. Existenzaussagen}
+
+\textbf{Idee}
+
+\vspace{0.3cm}
+
+Wie kann man beweisen, dass ein Objekt existiert,
+ohne es explizit anzugeben?
+
+\vspace{0.4cm}
+
+Oft können nicht alle Möglichkeiten
+durchprobiert werden.
+
+\vspace{0.4cm}
+
+\textbf{Beispiel}
+
+Seien
+
+\[
+a_1,a_2,\ldots,a_n\in\mathbb Z
+\]
+
+(nicht notwendigerweise verschieden).
+
+\vspace{0.2cm}
+
+Frage: Existiert eine Teilmenge dieser Zahlen,
+deren Summe durch \(n\) teilbar ist?
+
+\vspace{0.3cm}
+
+\[
+\{1,1,1,1\},
+\qquad
+\{9,-3,14,5\}
+\]
+
+\end{frame}
+
+\begin{frame}{3. Existenzaussagen}
+
+\textbf{Satz 3.1 (Schubfachprinzip)}
+
+\vspace{0.3cm}
+
+Seien \(n,r\in\mathbb N\).
+
+Werden \(n\) Objekte auf \(r\) Fächer verteilt und gilt
+
+\[
+n>r,
+\]
+
+so enthält mindestens ein Fach mindestens zwei Objekte.
+
+\vspace{0.5cm}
+
+Äquivalent:
+
+Seien \(N,R\) Mengen mit
+
+\[
+|N|=n>|R|=r
+\]
+
+und \(f:N\to R\).
+
+Dann existiert ein \(a\in R\) mit
+
+\[
+|f^{-1}(a)|\ge 2.
+\]
+
+\end{frame}
+
+\begin{frame}{3. Existenzaussagen}
+
+\textbf{Anwendung des Schubfachprinzips}
+
+\vspace{0.3cm}
+
+Betrachte die Partialsummen
+
+\[
+N=\{0,a_1,a_1+a_2,\dots,a_1+\dots+a_n\}.
+\]
+
+Dann gilt
+
+\[
+|N|=n+1.
+\]
+
+\vspace{0.3cm}
+
+Als Fächer betrachten wir die möglichen Reste modulo \(n\):
+
+\[
+R=\{0,1,\dots,n-1\},
+\qquad |R|=n.
+\]
+
+\vspace{0.3cm}
+
+Da
+
+\[
+n+1>n,
+\]
+
+haben nach dem Schubfachprinzip zwei Partialsummen denselben Rest modulo \(n\).
+
+\vspace{0.3cm}
+
+Ihre Differenz ist daher durch \(n\) teilbar und entspricht einer Summe der Form
+
+\[
+a_{k+1}+a_{k+2}+\cdots+a_l.
+\]
+
+\hfill\(\square\)
+
+\end{frame}
+
+\begin{frame}{3. Existenzaussagen}
+
+\textbf{Satz 3.2 (Ramsey-Eigenschaft)}
+
+\vspace{0.3cm}
+
+Seien \(l_1,\dots,l_r\in\mathbb N\).
+
+Dann existiert eine kleinste Zahl
+
+\[
+n=l(l_1,\dots,l_r),
+\]
+
+so dass für jede \(r\)-Färbung einer \(n\)-elementigen Menge
+mindestens eine Farbe \(i\) eine Teilmenge der Größe \(l_i\)
+enthält.
+
+\vspace{0.4cm}
+
+Für
+
+\[
+l_1=\cdots=l_r=2
+\]
+
+erhält man das Schubfachprinzip.
+
+\end{frame}
+
+\begin{frame}{3. Existenzaussagen}
+
+\textbf{Satz 3.3 (Ramsey-Zahlen)}
+
+\vspace{0.3cm}
+
+Für \(k,l\ge 2\) existiert eine kleinste Zahl
+
+\[
+R(k,l),
+\]
+
+so dass gilt:
+
+\vspace{0.3cm}
+
+Werden alle Paare einer \(n\)-elementigen Menge mit
+
+\[
+n\ge R(k,l)
+\]
+
+rot oder blau gefärbt, dann existiert
+
+\begin{itemize}
+\item entweder eine \(k\)-Menge, deren Paare alle rot sind,
+\item oder eine \(l\)-Menge, deren Paare alle blau sind.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{3. Existenzaussagen}
+
+\textbf{Beweisidee}
+
+\vspace{0.3cm}
+
+Für Ramsey-Zahlen gilt die Rekursion
+
+\[
+R(k,l)
+\le
+R(k-1,l)+R(k,l-1).
+\]
+
+\vspace{0.4cm}
+
+Dies erinnert an die Pascalsche Rekursion
+
+\[
+\binom{n}{k}
+=
+\binom{n-1}{k-1}
++
+\binom{n-1}{k}.
+\]
+
+\vspace{0.4cm}
+
+Daraus folgt insbesondere
+
+\[
+R(k,l)
+\le
+\binom{k+l-2}{k-1}.
+\]
+
+\end{frame}
+
+\begin{frame}{3. Existenzaussagen}
+
+\textbf{Beispiel: \(R(3,3)=6\)}
+
+\vspace{0.3cm}
+
+Interpretation:
+
+\begin{itemize}
+\item Rot: Zwei Personen kennen sich.
+\item Blau: Zwei Personen kennen sich nicht.
+\end{itemize}
+
+\vspace{0.3cm}
+
+Dann gilt:
+
+\[
+R(3,3)=6.
+\]
+
+In jeder Gruppe von sechs Personen gibt es stets
+
+\begin{itemize}
+\item entweder drei Personen, die sich gegenseitig kennen,
+\item oder drei Personen, die sich gegenseitig nicht kennen.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\centering
+\includegraphics[width=0.55\textwidth]{ramsey33.png}
+
+\end{frame}
+
+\begin{frame}{3. Existenzaussagen}
+
+\textbf{Definition 3.4 (Färbungsproblem)}
+
+\vspace{0.3cm}
+
+Sei \(F\) eine Familie von Mengen mit
+
+\[
+|A|=d
+\qquad (A\in F).
+\]
+
+\vspace{0.2cm}
+
+Gesucht ist eine Zweifärbung der Elemente (rot/blau), sodass
+keine Menge \(A\in F\) einfarbig wird.
+
+\vspace{0.4cm}
+
+\textbf{Idee der probabilistischen Methode}
+
+\vspace{0.2cm}
+
+Statt ein Objekt direkt zu konstruieren, betrachten wir eine
+zufällige Auswahl aller möglichen Objekte.
+
+\vspace{0.2cm}
+
+Zeigt man, dass die Wahrscheinlichkeit für ein Objekt mit den
+gewünschten Eigenschaften positiv ist, so muss ein solches Objekt
+existieren.
+
+\vspace{0.4cm}
+
+Wir definieren
+
+\[
+m(d)
+=
+\min\{|F|:\,F \text{ ist nicht 2-färbbar}\}.
+\]
+
+\end{frame}
+
+\begin{frame}{3. Existenzaussagen}
+
+\textbf{Satz 3.5 (Erdős)}
+
+\vspace{0.2cm}
+
+Für \(d\ge 1\) gilt
+
+\[
+m(d)>2^{d-1}.
+\]
+
+\vspace{0.4cm}
+
+\textbf{Beweisidee}
+
+\begin{itemize}
+\item Färbe jedes Element unabhängig mit Wahrscheinlichkeit
+\(\frac12\) rot bzw. blau.
+
+\item Für \(A\in F\) sei \(E_A\) das Ereignis,
+dass \(A\) einfarbig wird.
+
+\item Für \(|A|=d\) gilt
+
+\[
+p(E_A)=\frac{2}{2^d}=\frac{1}{2^{d-1}}.
+\]
+
+\item Mit der Vereinigungsabschätzung folgt
+
+\[
+p\!\left(\bigcup_{A\in F}E_A\right)
+\le
+\sum_{A\in F}p(E_A)
+=
+\frac{|F|}{2^{d-1}}.
+\]
+
+\item Ist \(|F|<2^{d-1}\), so gilt
+
+\[
+p\!\left(\bigcup_{A\in F}E_A\right)<1.
+\]
+
+\item Daher existiert eine Färbung, bei der keine Menge
+\(A\in F\) einfarbig ist.
+
+\end{itemize}
+
+\hfill\(\square\)
+
+\end{frame}
+
+\begin{frame}{Quellenverzeichnis}
+
+\begin{thebibliography}{99}
+
+\bibitem{}
+Aigner, Martin.
+\textit{Diskrete Mathematik}.
+6. Auflage.
+Vieweg+Teubner Verlag, Wiesbaden, 2006.
+
+\end{thebibliography}
+
+\end{frame}
+
 \end{document}
