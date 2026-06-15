@@ -276,7 +276,7 @@ Per vollständiger Induktion über \(n\).
 
 \textbf{Beweis von Korollar 1.4 (Fortsetzung)}
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
 \[
 \text{I.V.:}\qquad
@@ -290,7 +290,7 @@ Per vollständiger Induktion über \(n\).
 
 \[
 \text{I.S.:}\qquad
-\text{Zu zeigen: }
+\text{z.z.: }
 \sum_{k=0}^{n+1}\binom{n+1}{k}
 =
 2^{n+1}.
@@ -1836,19 +1836,56 @@ Wir definieren \(m(d)=\min\{|F|:\,F \text{ ist nicht 2-färbbar}\}.\)
 
 \vspace{0.2cm}
 
-Für \(d\ge 1\) gilt \(m(d)>2^{d-1}.\)
+Für \(d\ge 1\) gilt
+
+\[
+m(d)>2^{d-1}.
+\]
 
 \vspace{0.3cm}
 
-\textbf{Beweisidee.}
+\textbf{Beweis.}
 
-Färbe jedes Element unabhängig mit Wahrscheinlichkeit
-\(\frac12\) rot bzw. blau. Für \(A\in F\) sei \(E_A\) das Ereignis,
-dass \(A\) einfarbig wird. Da \(|A|=d\), gilt
+Sei \(F\) eine Familie von Mengen mit
 
 \[
-p(E_A)=\frac{2}{2^d}=\frac1{2^{d-1}}.
+|F|<2^{d-1}
 \]
+
+und
+
+\[
+|A|=d
+\qquad (A\in F).
+\]
+
+Wir färben jedes Element unabhängig mit
+Wahrscheinlichkeit \(\frac12\) rot bzw. blau.
+
+\vspace{0.3cm}
+
+Für \(A\in F\) sei \(E_A\) das Ereignis,
+dass \(A\) einfarbig wird.
+
+Da alle \(d\) Elemente dieselbe Farbe besitzen müssen,
+
+\[
+p(E_A)
+=
+\left(\frac12\right)^d
++
+\left(\frac12\right)^d
+=
+\frac1{2^{d-1}}.
+\]
+
+\end{frame}
+
+\begin{frame}{3. Existenzaussagen}
+
+\textbf{Beweis von Satz 3.5 (Fortsetzung)}
+
+\vspace{0.3cm}
 
 Mit der Vereinigungsabschätzung folgt
 
@@ -1860,9 +1897,28 @@ p\!\left(\bigcup_{A\in F}E_A\right)
 \frac{|F|}{2^{d-1}}.
 \]
 
-Ist nun \(|F|<2^{d-1}\), so ist diese Wahrscheinlichkeit kleiner als \(1\).
-Folglich existiert eine Färbung, bei der keine Menge aus \(F\) einfarbig ist.
-Also ist \(F\) 2-färbbar und damit
+Da \(|F|<2^{d-1}\), gilt
+
+\[
+p\!\left(\bigcup_{A\in F}E_A\right)
+<
+1.
+\]
+
+Somit besitzt das Komplement
+
+\[
+\left(\bigcup_{A\in F}E_A\right)^c
+\]
+
+positive Wahrscheinlichkeit.
+
+\vspace{0.3cm}
+
+Folglich existiert eine Färbung, bei der
+kein \(A\in F\) einfarbig ist.
+
+Also ist \(F\) 2-färbbar und daher
 
 \[
 m(d)>2^{d-1}.
@@ -1874,9 +1930,7 @@ m(d)>2^{d-1}.
 
 \begin{frame}{Quellenverzeichnis}
 
-[1] Martin Aigner.\\
-\textit{Diskrete Mathematik}.\\
-6. Auflage, Vieweg+Teubner Verlag, 2006.
+[1] Martin Aigner, \textit{Diskrete Mathematik}, 6. Auflage, Vieweg+Teubner Verlag, 2006.
 
 \end{frame}
 
