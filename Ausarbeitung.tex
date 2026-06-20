@@ -573,6 +573,443 @@ kS_{n-1,k}.
 
 \hfill $\square$
 
+\section{Diskrete Wahrscheinlichkeitsrechnung}
+
+Zur Behandlung probabilistischer Existenzaussagen benötigen wir einige Grundbegriffe der diskreten Wahrscheinlichkeitsrechnung.
+
+\textbf{Definition 2.1.}
+Ein diskreter Wahrscheinlichkeitsraum besteht aus einer endlichen Menge
+\(\Omega\) sowie einer Abbildung
+
+\[
+p:\Omega\to[0,1]
+\]
+
+mit
+
+\[
+\sum_{\omega\in\Omega} p(\omega)=1.
+\]
+
+Die Abbildung \(p\) heißt Wahrscheinlichkeitsverteilung auf \(\Omega\).
+Ein Ereignis ist eine Teilmenge \(A\subseteq\Omega\). Für ein Ereignis \(A\)
+definiert man
+
+\[
+p(A)=\sum_{\omega\in A} p(\omega).
+\]
+
+\medskip
+
+\textbf{Beispiel (Würfelwurf).}
+Beim einmaligen Werfen eines Würfels ist
+
+\[
+\Omega=\{1,2,3,4,5,6\}.
+\]
+
+Für einen idealen Würfel gilt
+
+\[
+p(\omega)=\frac16
+\qquad (\omega\in\Omega).
+\]
+
+Die Wahrscheinlichkeiten müssen jedoch nicht gleich verteilt sein. Beispielsweise kann ein gezinkter Würfel durch
+
+\[
+p(1)=p(4)=\frac14,\qquad
+p(2)=p(5)=p(6)=\frac1{10},\qquad
+p(3)=\frac15
+\]
+
+beschrieben werden.
+
+\medskip
+
+\textbf{Satz 2.2.}
+Für Ereignisse \(A,B,A_1,A_2,\dots\subseteq\Omega\) gelten die grundlegenden Rechenregeln
+
+\[
+A\subseteq B
+\quad\Longrightarrow\quad
+p(A)\leq p(B),
+\]
+
+\[
+p(A\cup B)
+=
+p(A)+p(B)-p(A\cap B),
+\]
+
+\[
+A=\bigcup_i A_i
+\text{ (disjunkt)}
+\quad\Longrightarrow\quad
+p(A)=\sum_i p(A_i),
+\]
+
+\[
+p(\Omega\setminus A)
+=
+1-p(A),
+\]
+
+sowie die Vereinigungsabschätzung
+
+\[
+p\!\left(\bigcup_i A_i\right)
+\leq
+\sum_i p(A_i).
+\]
+
+\medskip
+
+\textbf{Definition 2.3.}
+Ein Wahrscheinlichkeitsraum heißt \emph{uniform}, wenn alle Ergebnisse gleich wahrscheinlich sind. Dann gilt
+
+\[
+p(\omega)=\frac1{|\Omega|}
+\qquad (\omega\in\Omega).
+\]
+
+Für jedes Ereignis \(A\subseteq\Omega\) folgt daraus
+
+\[
+p(A)=\frac{|A|}{|\Omega|}.
+\]
+
+\textbf{Satz 2.4 (Produktregel).}
+Zwei Zufallsexperimente heißen unabhängig, wenn für alle
+\((\omega_1,\omega_2)\in\Omega_1\times\Omega_2\)
+
+\[
+p(\omega_1,\omega_2)
+=
+p(\omega_1)p(\omega_2)
+\]
+
+gilt. Dann folgt für Ereignisse \(A\subseteq\Omega_1\) und
+\(B\subseteq\Omega_2\)
+
+\[
+p(A,B)=p(A)p(B).
+\]
+
+Allgemeiner gilt für unabhängige Ereignisse
+\(A_1,\dots,A_m\)
+
+\[
+p(A_1,\dots,A_m)
+=
+\prod_{i=1}^{m} p(A_i).
+\]
+
+\textit{Beweis.}
+Für \(A\subseteq\Omega_1\) und \(B\subseteq\Omega_2\) gilt
+
+\[
+p(A,B)
+=
+\sum_{(\omega_1,\omega_2)\in A\times B}
+p(\omega_1,\omega_2).
+\]
+
+Wegen der Unabhängigkeit folgt
+
+\[
+p(A,B)
+=
+\sum_{\omega_1\in A}\sum_{\omega_2\in B}
+p(\omega_1)p(\omega_2).
+\]
+
+Daraus ergibt sich
+
+\[
+p(A,B)
+=
+\left(\sum_{\omega_1\in A}p(\omega_1)\right)
+\left(\sum_{\omega_2\in B}p(\omega_2)\right)
+=
+p(A)p(B).
+\]
+
+\hfill $\square$
+
+\medskip
+
+\textbf{Definition 2.5 (Zufallsvariable).}
+Eine Zufallsvariable ist eine Abbildung
+
+\[
+X:\Omega\to\mathbb{R}.
+\]
+
+Jedem Ergebnis \(\omega\in\Omega\) wird dabei eine reelle Zahl
+\(X(\omega)\) zugeordnet. Die von \(X\) induzierte Verteilung ist gegeben durch
+
+\[
+p_X(x)
+=
+p(X=x)
+=
+\sum_{X(\omega)=x} p(\omega).
+\]
+
+Dabei gilt
+
+\[
+\sum_{x\in X(\Omega)} p_X(x)=1,
+\]
+
+sodass \(p_X\) wiederum eine Wahrscheinlichkeitsverteilung ist.
+
+\textbf{Beispiel.}
+Wir werfen zweimal einen Würfel und betrachten die Summe der Augenzahlen. Dann ist
+
+\[
+X:\{1,\dots,6\}^2\to\{2,\dots,12\},
+\qquad
+X(\omega_1,\omega_2)=\omega_1+\omega_2.
+\]
+
+Beispielsweise gilt \(X(3,5)=8\). Für einen fairen Würfel erhält man etwa
+
+\[
+p_X(4)
+=
+p(1,3)+p(2,2)+p(3,1)
+=
+\frac{3}{36}
+=
+\frac{1}{12}.
+\]
+
+\medskip
+
+\textbf{Definition 2.6 (Gemeinsame Verteilung).}
+Seien \(X:\Omega\to T\) und \(Y:\Omega\to U\) zwei Zufallsvariablen. Die gemeinsame Verteilung ist definiert durch
+
+\[
+p(x,y)
+=
+p(X=x\land Y=y)
+=
+\sum_{\substack{\omega\in\Omega\\ X(\omega)=x\\ Y(\omega)=y}}
+p(\omega).
+\]
+
+Sind \(X\) und \(Y\) unabhängig, so gilt
+
+\[
+p(x,y)=p_X(x)p_Y(y).
+\]
+
+Allgemein heißen \(X_1,\dots,X_m\) unabhängig, falls
+
+\[
+p(x_1,\dots,x_m)
+=
+\prod_{i=1}^{m}p_{X_i}(x_i).
+\]
+
+\medskip
+
+\textbf{Beispiel.}
+Beim zweimaligen Würfeln sind die Zufallsvariablen
+
+\[
+X_1=\text{erste Augenzahl},
+\qquad
+X_2=\text{zweite Augenzahl}
+\]
+
+unabhängig. Betrachtet man dagegen
+
+\[
+X_1=\text{Summe der Augenzahlen},
+\qquad
+X_2=\text{Produkt der Augenzahlen},
+\]
+
+so sind \(X_1\) und \(X_2\) nicht unabhängig.
+
+\medskip
+
+\textbf{Definition 2.7 (Erwartungswert).}
+Sei \(X:\Omega\to\mathbb R\) eine Zufallsvariable. Der Erwartungswert von \(X\) ist definiert als
+
+\[
+E(X)=\sum_{\omega\in\Omega}p(\omega)X(\omega).
+\]
+
+Äquivalent gilt
+
+\[
+E(X)=\sum_{x\in X(\Omega)}p_X(x)x.
+\]
+
+Der Erwartungswert beschreibt den gewichteten Durchschnitt aller möglichen Werte.
+
+\paragraph{Korollar 2.8 (Linearität des Erwartungswertes).}
+Für Zufallsvariablen \(X,Y\) gilt
+
+\[
+E(X+Y)=E(X)+E(Y).
+\]
+
+Allgemeiner gilt für \(\alpha_1,\dots,\alpha_m\in\mathbb{R}\)
+
+\[
+E\!\left(\alpha_1X_1+\cdots+\alpha_mX_m\right)
+=
+\sum_{i=1}^{m}\alpha_iE(X_i).
+\]
+
+\textit{Beweis.}
+Aus der Definition des Erwartungswertes folgt
+
+\[
+E(X+Y)
+=
+\sum_{\omega\in\Omega}
+p(\omega)\bigl(X(\omega)+Y(\omega)\bigr).
+\]
+
+Wegen der Linearität endlicher Summen ergibt sich
+
+\[
+E(X+Y)
+=
+\sum_{\omega\in\Omega}p(\omega)X(\omega)
++
+\sum_{\omega\in\Omega}p(\omega)Y(\omega)
+=
+E(X)+E(Y).
+\]
+
+Die allgemeine Formel folgt analog.
+\hfill\(\square\)
+
+\medskip
+
+\paragraph{Korollar 2.9.}
+Sind \(X\) und \(Y\) unabhängige Zufallsvariablen, so gilt
+
+\[
+E(XY)=E(X)\,E(Y).
+\]
+
+\textit{Beweis.}
+Nach Definition des Erwartungswertes gilt
+
+\[
+E(XY)
+=
+\sum_x\sum_y
+p(X=x,Y=y)\,xy.
+\]
+
+Wegen der Unabhängigkeit folgt
+
+\[
+p(X=x,Y=y)
+=
+p_X(x)\,p_Y(y).
+\]
+
+Damit erhält man
+
+\[
+E(XY)
+=
+\sum_x\sum_y
+p_X(x)p_Y(y)\,xy.
+\]
+
+Durch Ausklammern der voneinander unabhängigen Summen ergibt sich
+
+\[
+E(XY)
+=
+\left(\sum_x p_X(x)x\right)
+\left(\sum_y p_Y(y)y\right).
+\]
+
+Nach Definition des Erwartungswertes folgt
+
+\[
+E(XY)=E(X)\,E(Y).
+\]
+
+\hfill\(\square\)
+
+\medskip
+
+\paragraph{Definition 2.10 (Varianz).}
+Sei \(X\) eine Zufallsvariable mit Erwartungswert
+\(\mu=E(X)\).
+Die Varianz von \(X\) ist definiert durch
+
+\[
+V(X)=E\!\left((X-\mu)^2\right).
+\]
+
+Sie misst die Streuung der Werte von \(X\) um ihren Erwartungswert.
+
+Es gilt die Rechenformel
+
+\[
+V(X)=E(X^2)-E(X)^2.
+\]
+
+Für unabhängige Zufallsvariablen \(X,Y\) gilt außerdem
+
+\[
+V(X+Y)=V(X)+V(Y).
+\]
+
+Die Standardabweichung ist definiert durch
+
+\[
+\sigma(X)=\sqrt{V(X)}.
+\]
+
+\medskip
+
+\textbf{Beispiel (Lotto).}
+Betrachte zwei Zufallsvariablen mit demselben Erwartungswert
+
+\[
+E(X)=E(Y)=20,
+\]
+
+wobei
+
+\[
+X=(0,2,5,8,85),
+\qquad
+Y=(18,19,20,21,22).
+\]
+
+Die Varianzen unterscheiden sich deutlich:
+
+\[
+V(X)=1063.6,
+\qquad
+V(Y)=2.
+\]
+
+Daraus folgen die Standardabweichungen
+
+\[
+\sigma(X)=\sqrt{1063.6}\approx 32.6,
+\qquad
+\sigma(Y)=\sqrt{2}\approx 1.41.
+\]
+
+Obwohl beide Zufallsvariablen denselben Erwartungswert besitzen, streuen die Werte von \(X\) wesentlich stärker als die von \(Y\).
 
 
 
