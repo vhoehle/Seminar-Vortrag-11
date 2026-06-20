@@ -181,5 +181,401 @@ Damit ergibt sich
 Damit folgt die Pascalsche Identität unmittelbar aus der Definition.
 \hfill\(\square\)
 
+\subsection{Folgerungen der Pascalschen Identität}
+
+Aus Satz 1.2 ergeben sich unmittelbar mehrere bekannte Eigenschaften der Binomialkoeffizienten.
+
+\paragraph{Korollar 1.3 (Pascalsches Dreieck).}
+Die Binomialkoeffizienten lassen sich in Form des Pascalschen Dreiecks anordnen:
+
+\[
+\begin{array}{c|cccccc}
+n\backslash k & 0&1&2&3&4&5\\ \hline
+0&1\\
+1&1&1\\
+2&1&2&1\\
+3&1&3&3&1\\
+4&1&4&6&4&1\\
+5&1&5&10&10&5&1
+\end{array}
+\]
+
+Jeder Eintrag entsteht als Summe der beiden darüberliegenden Einträge.
+
+\paragraph{Korollar 1.4 (Zeilensumme).}
+Für alle \(n\in\mathbb N_0\) gilt
+
+\[
+\sum_{k=0}^{n}\binom{n}{k}=2^n.
+\]
+
+\begin{proof}
+Der Beweis erfolgt durch vollständige Induktion über \(n\).
+
+Für \(n=0\) gilt
+
+\[
+\sum_{k=0}^{0}\binom{0}{k}
+=
+\binom{0}{0}
+=
+1
+=
+2^0.
+\]
+
+Sei nun
+
+\[
+\sum_{k=0}^{n}\binom{n}{k}=2^n
+\]
+
+erfüllt. Mit der Pascalschen Identität folgt
+
+\[
+\sum_{k=0}^{n+1}\binom{n+1}{k}
+=
+2\sum_{k=0}^{n}\binom{n}{k}.
+\]
+
+Mit der Induktionsvoraussetzung erhält man
+
+\[
+\sum_{k=0}^{n+1}\binom{n+1}{k}
+=
+2\cdot 2^n
+=
+2^{n+1}.
+\]
+
+Damit ist die Behauptung gezeigt.
+\end{proof}
+
+\paragraph{Korollar 1.5 (Spaltensumme).}
+Für \(n,k\ge 0\) gilt
+
+\[
+\sum_{m=0}^{n}\binom{m}{k}
+=
+\binom{n+1}{k+1}.
+\]
+
+\begin{proof}
+Induktion über \(n\).
+
+Für \(n=0\) gilt
+
+\[
+\sum_{m=0}^{0}\binom{m}{k}
+=
+\binom{0}{k}
+=
+\binom{1}{k+1}.
+\]
+
+Sei die Behauptung für \(n\) wahr. Dann
+
+\[
+\sum_{m=0}^{n+1}\binom{m}{k}
+=
+\sum_{m=0}^{n}\binom{m}{k}
++
+\binom{n+1}{k}.
+\]
+
+Mit der Induktionsvoraussetzung ergibt sich
+
+\[
+\binom{n+1}{k+1}
++
+\binom{n+1}{k}
+=
+\binom{n+2}{k+1},
+\]
+
+wobei im letzten Schritt erneut die Pascalsche Identität verwendet wurde.
+\end{proof}
+
+\paragraph{Korollar 1.6 (Diagonalsumme).}
+Für \(m,n\ge 0\) gilt
+
+\[
+\sum_{k=0}^{n}\binom{m+k}{k}
+=
+\binom{m+n+1}{n}.
+\]
+
+\begin{proof}
+Der Beweis erfolgt analog zum Beweis der Spaltensumme mittels vollständiger Induktion über \(n\). Es gilt
+
+\[
+\sum_{k=0}^{n+1}\binom{m+k}{k}
+=
+\sum_{k=0}^{n}\binom{m+k}{k}
++
+\binom{m+n+1}{n+1}.
+\]
+
+Mit der Induktionsvoraussetzung folgt
+
+\[
+\binom{m+n+1}{n}
++
+\binom{m+n+1}{n+1}
+=
+\binom{m+n+2}{n+1},
+\]
+
+woraus die Behauptung folgt.
+\end{proof}
+
+\paragraph{Korollar 1.7 (Negation).}
+Für \(r\in\mathbb C\) und \(k\in\mathbb Z\) gilt
+
+\[
+\binom{-r}{k}
+=
+(-1)^k
+\binom{r+k-1}{k}.
+\]
+
+\begin{proof}
+Für die aufsteigende Fakultät gilt
+
+\[
+(-x)^{\underline{k}}
+=
+(-x)(-x-1)\cdots(-x-k+1).
+\]
+
+Durch Ausklammern von \((-1)\) aus jedem Faktor erhält man
+
+\[
+(-x)^{\underline{k}}
+=
+(-1)^k x(x+1)\cdots(x+k-1)
+=
+(-1)^k x^{\overline{k}}.
+\]
+
+Division durch \(k!\) liefert
+
+\[
+\binom{-r}{k}
+=
+(-1)^k
+\binom{r+k-1}{k}.
+\]
+\end{proof}
+
+\paragraph{Satz 1.9 (Binomialsatz).}
+Für \(n\ge 0\) gilt
+
+\[
+(x+y)^n
+=
+\sum_{k=0}^{n}
+\binom{n}{k}
+x^k y^{\,n-k}.
+\]
+
+Insbesondere folgt für \(y=1\)
+
+\[
+(x+1)^n
+=
+\sum_{k=0}^{n}
+\binom{n}{k}
+x^k .
+\]
+
+\begin{proof}
+Schreibt man
+
+\[
+(x+y)^n=(x+y)\cdots(x+y),
+\]
+
+so wird beim Ausmultiplizieren aus jedem der \(n\) Faktoren entweder
+\(x\) oder \(y\) gewählt.
+
+Der Term \(x^k y^{\,n-k}\) entsteht genau dann, wenn aus genau \(k\)
+Faktoren ein \(x\) und aus den übrigen \(n-k\) Faktoren ein \(y\)
+gewählt wird. Die Anzahl dieser Möglichkeiten ist
+
+\[
+\binom{n}{k}.
+\]
+
+Somit erscheint der Term \(x^k y^{\,n-k}\) mit dem Koeffizienten
+\(\binom{n}{k}\). Summiert man über alle möglichen Werte von \(k\),
+erhält man die Behauptung.
+\end{proof}
+
+Für den Spezialfall \(m=n\) kann die Behauptung auch direkt aus dem
+Binomialsatz gezeigt werden. Setzt man in
+
+\[
+(x+1)^n
+=
+\sum_{k=0}^{n}
+\binom{n}{k}x^k
+\]
+
+den Wert \(x=-1\) ein, so erhält man
+
+\[
+\sum_{k=0}^{n}
+\binom{n}{k}(-1)^k
+=
+(-1+1)^n
+=
+0.
+\]
+
+Damit folgt
+
+\[
+\sum_{k=0}^{n}
+(-1)^k
+\binom{n}{k}
+=
+0.
+\]
+
+\subsection{Vandermonde-Identität}
+
+\textbf{Satz 1.10 (Vandermonde-Identität).}
+Für \(r,s,n\in\mathbb N_0\) gilt
+
+\[
+\binom{r+s}{n}
+=
+\sum_{k=0}^{n}
+\binom{r}{k}
+\binom{s}{n-k}.
+\]
+
+\textbf{Beweis.}
+Seien \(R\) und \(S\) disjunkte Mengen mit
+\(|R|=r\) und \(|S|=s\).
+Wir zählen die Anzahl der Möglichkeiten, \(n\) Elemente aus
+\(R\cup S\) auszuwählen.
+
+Direkt ergeben sich
+
+\[
+\binom{r+s}{n}
+\]
+
+Möglichkeiten.
+
+Wählt man stattdessen zunächst genau \(k\) Elemente aus \(R\)
+und anschließend \(n-k\) Elemente aus \(S\), so erhält man
+
+\[
+\binom{r}{k}\binom{s}{n-k}
+\]
+
+Möglichkeiten.
+Summiert man über alle \(k=0,\dots,n\), so folgt
+
+\[
+\sum_{k=0}^{n}
+\binom{r}{k}
+\binom{s}{n-k}.
+\]
+
+Da beide Zählweisen dieselbe Menge von Auswahlen erfassen,
+ergibt sich die Behauptung.
+\hfill $\square$
+
+\subsection{Stirling-Zahlen}
+
+\textbf{Definition 1.13.}
+Die Stirling-Zahl zweiter Art \(S_{n,k}\) bezeichnet die Anzahl der
+Partitionen einer \(n\)-elementigen Menge in genau \(k\) nichtleere
+Blöcke.
+
+Es gelten die Anfangswerte
+
+\[
+S_{0,0}=1,
+\qquad
+S_{0,k}=0 \ (k>0),
+\qquad
+S_{n,0}=0 \ (n>0).
+\]
+
+Beispielsweise gilt
+
+\[
+S_{3,2}=3.
+\]
+
+\textbf{Satz 1.14.}
+Für \(n,k>0\) erfüllen die Stirling-Zahlen zweiter Art die Rekursion
+
+\[
+S_{n,k}
+=
+S_{n-1,k-1}
++
+kS_{n-1,k}.
+\]
+
+\textbf{Beweis.}
+Sei \(N\) eine \(n\)-elementige Menge und \(a\in N\) fest gewählt.
+Wir betrachten alle Partitionen von \(N\) in genau \(k\) Blöcke.
+
+\begin{enumerate}
+\item
+\(a\) bildet einen eigenen Block.
+Dann müssen die verbleibenden \(n-1\) Elemente in
+\(k-1\) Blöcke partitioniert werden.
+Dies liefert
+
+\[
+S_{n-1,k-1}
+\]
+
+Möglichkeiten.
+
+\item
+\(a\) liegt zusammen mit anderen Elementen in einem Block.
+Dann werden die übrigen \(n-1\) Elemente zunächst in
+\(k\) Blöcke partitioniert.
+Dies kann auf
+
+\[
+S_{n-1,k}
+\]
+
+Arten geschehen.
+
+Anschließend kann \(a\) zu einem der \(k\) vorhandenen
+Blöcke hinzugefügt werden.
+Damit entstehen
+
+\[
+kS_{n-1,k}
+\]
+
+Möglichkeiten.
+\end{enumerate}
+
+Durch Addition der beiden Fälle folgt
+
+\[
+S_{n,k}
+=
+S_{n-1,k-1}
++
+kS_{n-1,k}.
+\]
+
+\hfill $\square$
+
+
 
 \end{document}
