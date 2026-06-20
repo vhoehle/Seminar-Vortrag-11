@@ -95,5 +95,91 @@ definiert.
 
 Diese Verallgemeinerung ermöglicht es, die bekannten Eigenschaften der Binomialkoeffizienten auf einen wesentlich größeren Definitionsbereich zu übertragen. Insbesondere lässt sich damit die Pascalsche Identität als Polynomidentität formulieren und beweisen.
 
+\textbf{Satz 1.2 (Pascalsche Identität)}
+
+Für \(r\in\mathbb C\) und \(k\in\mathbb Z\) gilt
+
+\[
+\binom{r}{k}
+=
+\binom{r-1}{k-1}
++
+\binom{r-1}{k}.
+\]
+
+\textbf{Beweis.}
+Für \(k<0\) sowie für \(k=0\) ist die Aussage unmittelbar erfüllt.
+Sei nun \(k\geq 1\). Wir betrachten die Identität
+
+\[
+\binom{x}{k}
+=
+\binom{x-1}{k-1}
++
+\binom{x-1}{k},
+\qquad x\in\mathbb C.
+\]
+
+Beide Seiten sind Polynome in \(x\) vom Grad höchstens \(k\). Für alle
+\(x\in\mathbb N\) stimmt die Gleichung mit der bekannten rekursiven Formel
+für Binomialkoeffizienten überein. Die beiden Polynome besitzen daher
+unendlich viele gemeinsame Nullstellen ihrer Differenz.
+
+Da zwei Polynome vom Grad höchstens \(k\), die an unendlich vielen Stellen
+übereinstimmen, identisch sind, folgt
+
+\[
+\binom{x}{k}
+=
+\binom{x-1}{k-1}
++
+\binom{x-1}{k}
+\]
+
+für alle \(x\in\mathbb C\). Insbesondere gilt dies für \(x=r\).
+\hfill\(\square\)
+
+\medskip
+
+\textbf{Alternativer Beweis.}
+Für \(k\geq 1\) folgt direkt aus der Definition
+
+\[
+\binom{r-1}{k-1}
+=
+\frac{(r-1)(r-2)\cdots(r-k+1)}{(k-1)!}
+=
+\frac{k(r-1)(r-2)\cdots(r-k+1)}{k!}
+\]
+
+sowie
+
+\[
+\binom{r-1}{k}
+=
+\frac{(r-1)(r-2)\cdots(r-k)}{k!}.
+\]
+
+Damit ergibt sich
+
+\[
+\begin{aligned}
+\binom{r-1}{k-1}
++\binom{r-1}{k}
+&=
+\frac{k(r-1)\cdots(r-k+1)}{k!}
++\frac{(r-1)\cdots(r-k)}{k!}\\[1ex]
+&=
+\frac{(r-1)\cdots(r-k+1)\bigl(k+(r-k)\bigr)}{k!}\\[1ex]
+&=
+\frac{r(r-1)\cdots(r-k+1)}{k!}\\[1ex]
+&=
+\binom{r}{k}.
+\end{aligned}
+\]
+
+Damit folgt die Pascalsche Identität unmittelbar aus der Definition.
+\hfill\(\square\)
+
 
 \end{document}
