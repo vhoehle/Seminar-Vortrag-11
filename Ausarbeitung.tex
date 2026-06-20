@@ -18,29 +18,82 @@
 \newtheorem{prop}[thm]{Proposition}
 
 
-
 \title{Rekursion und Existenzaussagen}
 \date{\today}
 \author{Valerie Höhle\\ \url{valerie.hoehle@uni-bielefeld.de}}
 \begin{document}
 
 \maketitle
+\section{Rekursionen}
 
-\section{Introduction}
-\begin{thm}
- Für alle   $x\in \R$ gilt $x^2\geq 0$. 
-\end{thm}
-\begin{cor}
- Für alle   $x\in \R$ gilt \begin{align}
-     x^2\geq 0
- \end{align}. 
-\end{cor}
-\begin{prop}
- Für alle   $x\in \R$ gilt $x^2\geq 0$. 
-\end{prop}
-\section{}
+Rekursionen sind ein zentrales Hilfsmittel der diskreten Mathematik. Die Grundidee besteht darin, neue Werte mithilfe bereits bekannter kleinerer Werte zu bestimmen. Ein wichtiges Beispiel hierfür sind die Binomialkoeffizienten.
 
+Für \(n,k\in\mathbb{N}_0\) mit \(k\leq n\) werden die Binomialkoeffizienten durch
 
+\[
+\binom{n}{k}
+=
+\frac{n!}{k!(n-k)!}
+\]
+
+definiert. Sie geben die Anzahl der Möglichkeiten an, aus einer \(n\)-elementigen Menge genau \(k\) Elemente auszuwählen. Darüber hinaus gelten die Beziehungen
+
+\[
+\binom{n}{k}
+=
+\binom{n}{n-k}
+\]
+
+sowie
+
+\[
+\binom{n}{k}
+=
+\frac{n(n-1)\cdots(n-k+1)}{k!}.
+\]
+
+Um rekursive Formeln auch für allgemeinere Parameter formulieren zu können, erweitern wir die Definition der Binomialkoeffizienten auf komplexe Zahlen. Dazu setzen wir zunächst
+
+\[
+\binom{0}{0}=1,
+\qquad
+0!=1,
+\qquad
+n^{\underline 0}
+=
+n^{\overline 0}
+=
+1.
+\]
+
+Die Festlegung \(\binom{0}{0}=1\) ist dadurch motiviert, dass die leere Menge genau eine Teilmenge besitzt, nämlich sich selbst.
+
+\bigskip
+
+\textbf{Definition 1.1}
+
+Für \(r\in\mathbb C\) und \(k\in\mathbb Z\) definieren wir
+
+\[
+\binom{r}{k}
+=
+\begin{cases}
+\dfrac{r(r-1)\cdots(r-k+1)}{k!}, & k\geq 0,\\[1ex]
+0, & k<0.
+\end{cases}
+\]
+
+Die abfallende Fakultät wird durch
+
+\[
+r^{\underline{k}}
+=
+r(r-1)\cdots(r-k+1)
+\]
+
+definiert.
+
+Diese Verallgemeinerung ermöglicht es, die bekannten Eigenschaften der Binomialkoeffizienten auf einen wesentlich größeren Definitionsbereich zu übertragen. Insbesondere lässt sich damit die Pascalsche Identität als Polynomidentität formulieren und beweisen.
 
 
 \end{document}
