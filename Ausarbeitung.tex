@@ -1011,6 +1011,166 @@ Daraus folgen die Standardabweichungen
 
 Obwohl beide Zufallsvariablen denselben Erwartungswert besitzen, streuen die Werte von \(X\) wesentlich stärker als die von \(Y\).
 
+\section{Existenzaussagen}
+
+In vielen kombinatorischen Problemen soll gezeigt werden, dass ein
+bestimmtes Objekt existiert, ohne dieses explizit zu konstruieren.
+Ein grundlegendes Werkzeug hierfür ist das Schubfachprinzip.
+
+\paragraph{Satz 3.1 (Schubfachprinzip).}
+Seien \(n,r\in\mathbb N\).
+Werden \(n\) Objekte auf \(r\) Fächer verteilt und gilt
+
+\[
+n>r,
+\]
+
+so enthält mindestens ein Fach mindestens zwei Objekte.
+
+Äquivalent gilt:
+Sind \(N\) und \(R\) Mengen mit
+
+\[
+|N|>|R|
+\]
+
+und \(f:N\to R\), so existiert ein \(a\in R\) mit
+
+\[
+|f^{-1}(a)|\ge 2.
+\]
+
+\paragraph{Anwendung.}
+Seien \(a_1,\dots,a_n\in\mathbb Z\).
+Betrachte die Partialsummen
+
+\[
+0,\quad
+a_1,\quad
+a_1+a_2,\quad
+\dots,\quad
+a_1+\cdots+a_n.
+\]
+
+Dies sind \(n+1\) Zahlen.
+Modulo \(n\) existieren jedoch nur \(n\) verschiedene Restklassen.
+Nach dem Schubfachprinzip besitzen daher zwei Partialsummen denselben
+Rest modulo \(n\).
+Ihre Differenz ist durch \(n\) teilbar und hat die Form
+
+\[
+a_{k+1}+a_{k+2}+\cdots+a_l.
+\]
+
+Damit existiert stets eine nichtleere Teilsumme, die durch \(n\)
+teilbar ist.
+
+\paragraph{Ramsey-Theorie.}
+Ein wesentlich tieferes Resultat der Existenzaussagen ist die
+Ramsey-Theorie. Sie besagt, dass in hinreichend großen Strukturen
+zwangsläufig Ordnung entsteht.
+
+Für \(l_1,\dots,l_r\in\mathbb N\) existiert eine kleinste Zahl
+
+\[
+R(l_1,\dots,l_r),
+\]
+
+so dass jede \(r\)-Färbung einer Menge mit mindestens
+\(R(l_1,\dots,l_r)\) Elementen eine einfarbige Teilmenge der Größe
+\(l_i\) in einer der Farben enthält.
+
+\paragraph{Definition 3.3 (Färbungsproblem).}
+Sei \(F\) eine Familie von Mengen mit
+
+\[
+|A|=d
+\qquad (A\in F).
+\]
+
+Gesucht ist eine Zweifärbung der Elemente (rot/blau), so dass keine
+Menge \(A\in F\) einfarbig wird.
+
+Die probabilistische Methode betrachtet zufällige Färbungen.
+Kann gezeigt werden, dass die Wahrscheinlichkeit für eine gewünschte
+Eigenschaft positiv ist, so existiert mindestens ein Objekt mit dieser
+Eigenschaft.
+
+Wir definieren
+
+\[
+m(d)
+=
+\min\{|F|:\;F \text{ ist nicht 2-färbbar}\}.
+\]
+
+\paragraph{Satz 3.4 (Erdős).}
+Für \(d\ge 1\) gilt
+
+\[
+m(d)>2^{d-1}.
+\]
+
+\textit{Beweis.}
+Sei \(F\) eine Familie von Mengen mit
+
+\[
+|F|<2^{d-1}
+\]
+
+und \(|A|=d\) für alle \(A\in F\).
+
+Wir färben jedes Element unabhängig mit Wahrscheinlichkeit
+\(\tfrac12\) rot bzw. blau.
+
+Für \(A\in F\) sei \(E_A\) das Ereignis, dass \(A\) einfarbig wird.
+Dann gilt
+
+\[
+p(E_A)
+=
+\left(\frac12\right)^d
++
+\left(\frac12\right)^d
+=
+\frac1{2^{d-1}}.
+\]
+
+Mit der Vereinigungsabschätzung folgt
+
+\[
+p\!\left(\bigcup_{A\in F}E_A\right)
+\le
+\sum_{A\in F}p(E_A)
+=
+\frac{|F|}{2^{d-1}}
+<1.
+\]
+
+Somit besitzt das Komplement positive Wahrscheinlichkeit:
+
+\[
+p\!\left(\left(\bigcup_{A\in F}E_A\right)^c\right)>0.
+\]
+
+Folglich existiert eine Färbung, bei der keine Menge aus \(F\)
+einfarbig ist. Also ist \(F\) 2-färbbar und damit
+
+\[
+m(d)>2^{d-1}.
+\]
+
+\hfill\(\square\)
+
+\section*{Quellenverzeichnis}
+
+\begin{enumerate}
+    \item Martin Aigner:
+    \textit{Diskrete Mathematik},
+    6. Auflage,
+    Vieweg+Teubner Verlag,
+    2006.
+\end{enumerate}
 
 
 \end{document}
