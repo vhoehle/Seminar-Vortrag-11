@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{url}
+\usepackage{microtype}
 
 
 \newcommand{\R}{\mathbb{R}}% reele Zahlen
@@ -22,6 +23,7 @@
 \date{\today}
 \author{Valerie Höhle\\ \url{valerie.hoehle@uni-bielefeld.de}}
 \begin{document}
+\frenchspacing
 
 \maketitle
 \section{Rekursionen}
@@ -209,7 +211,7 @@ Für alle \(n\in\mathbb N_0\) gilt
 \sum_{k=0}^{n}\binom{n}{k}=2^n.
 \]
 
-\begin{proof}
+\textbf{Beweis.}
 Der Beweis erfolgt durch vollständige Induktion über \(n\).
 
 Für \(n=0\) gilt
@@ -249,7 +251,6 @@ Mit der Induktionsvoraussetzung erhält man
 \]
 
 Damit ist die Behauptung gezeigt.
-\end{proof}
 
 \paragraph{Korollar 1.5 (Spaltensumme).}
 Für \(n,k\ge 0\) gilt
@@ -260,7 +261,7 @@ Für \(n,k\ge 0\) gilt
 \binom{n+1}{k+1}.
 \]
 
-\begin{proof}
+\textbf{Beweis.}
 Induktion über \(n\).
 
 Für \(n=0\) gilt
@@ -294,7 +295,6 @@ Mit der Induktionsvoraussetzung ergibt sich
 \]
 
 wobei im letzten Schritt erneut die Pascalsche Identität verwendet wurde.
-\end{proof}
 
 \paragraph{Korollar 1.6 (Diagonalsumme).}
 Für \(m,n\ge 0\) gilt
@@ -305,7 +305,7 @@ Für \(m,n\ge 0\) gilt
 \binom{m+n+1}{n}.
 \]
 
-\begin{proof}
+\textbf{Beweis.}
 Der Beweis erfolgt analog zum Beweis der Spaltensumme mittels vollständiger Induktion über \(n\). Es gilt
 
 \[
@@ -327,7 +327,6 @@ Mit der Induktionsvoraussetzung folgt
 \]
 
 woraus die Behauptung folgt.
-\end{proof}
 
 \paragraph{Korollar 1.7 (Negation).}
 Für \(r\in\mathbb C\) und \(k\in\mathbb Z\) gilt
@@ -339,7 +338,7 @@ Für \(r\in\mathbb C\) und \(k\in\mathbb Z\) gilt
 \binom{r+k-1}{k}.
 \]
 
-\begin{proof}
+\textbf{Beweis.}
 Für die aufsteigende Fakultät gilt
 
 \[
@@ -366,7 +365,6 @@ Division durch \(k!\) liefert
 (-1)^k
 \binom{r+k-1}{k}.
 \]
-\end{proof}
 
 \paragraph{Satz 1.9 (Binomialsatz).}
 Für \(n\ge 0\) gilt
@@ -389,7 +387,7 @@ Insbesondere folgt für \(y=1\)
 x^k .
 \]
 
-\begin{proof}
+\textbf{Beweis.}
 Schreibt man
 
 \[
@@ -410,7 +408,6 @@ gewählt wird. Die Anzahl dieser Möglichkeiten ist
 Somit erscheint der Term \(x^k y^{\,n-k}\) mit dem Koeffizienten
 \(\binom{n}{k}\). Summiert man über alle möglichen Werte von \(k\),
 erhält man die Behauptung.
-\end{proof}
 
 Für den Spezialfall \(m=n\) kann die Behauptung auch direkt aus dem
 Binomialsatz gezeigt werden. Setzt man in
@@ -575,6 +572,7 @@ kS_{n-1,k}.
 \]
 
 \hfill $\square$
+
 
 
 
