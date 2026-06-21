@@ -1521,9 +1521,144 @@ a_{k+1}+a_{k+2}+\cdots+a_l.
 
 \begin{frame}{3. Existenzaussagen}
 
+\textbf{Schubfachprinzip mit Farben}
+
+\begin{itemize}
+    \item Die \(r\) Fächer werden als \(r\) verschiedene Farben betrachtet.
+    \item Die Elemente einer Menge \(N\) mit \(|N|=n\) werden mit diesen Farben gefärbt.
+\end{itemize}
+
+\medskip
+
+\textbf{Beispiel:}
+
+Farben: Rot, Blau, Grün (\(r=3\))
+
+Elemente: \(1,2,3,4\)
+
+\medskip
+
+Dann müssen mindestens zwei Elemente dieselbe Farbe besitzen.
+
+\[
+\Longrightarrow
+\text{Schubfachprinzip}
+\]
+
+\end{frame}
+
+\begin{frame}{3. Existenzaussagen}
+
+\textbf{Verallgemeinerung}
+
+\medskip
+
+Nicht nur eine Farbe soll mindestens zweimal vorkommen, sondern
+
+\begin{itemize}
+    \item Farbe \(1\) mindestens \(l_1\)-mal,
+    \item Farbe \(2\) mindestens \(l_2\)-mal,
+    \item \(\dots\)
+    \item Farbe \(r\) mindestens \(l_r\)-mal.
+\end{itemize}
+
+\medskip
+
+\textbf{Satz 3.2 (Ramsey-Eigenschaft)}
+
+Wenn
+
+\[
+|N|
+=
+l_1+l_2+\dots+l_r-r+1,
+\]
+
+dann gilt:
+
+Bei jeder Färbung von \(N\) mit \(r\) Farben gibt es eine Farbe \(i\),
+die mindestens \(l_i\)-mal vorkommt.
+
+\end{frame}
+
+\begin{frame}{3. Existenzaussagen}
+
+\textbf{Beispiel}
+
+\[
+l_1=4,\qquad l_2=3
+\]
+
+Farben:
+
+\[
+\text{Rot},\quad \text{Blau}
+\]
+
+Dann benötigt man
+
+\[
+n=l_1+l_2-2+1
+=4+3-2+1
+=6
+\]
+
+Elemente.
+
+\medskip
+
+Also:
+
+Werden \(6\) Elemente rot oder blau gefärbt,
+dann gibt es entweder
+
+\begin{itemize}
+    \item mindestens \(4\) rote Elemente,
+    \item oder mindestens \(3\) blaue Elemente.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{3. Existenzaussagen}
+
+\textit{Beweis.}
+
+Angenommen, die Behauptung wäre falsch.
+
+Dann gäbe es
+
+\begin{itemize}
+    \item höchstens \(3\) rote Elemente,
+    \item und höchstens \(2\) blaue Elemente.
+\end{itemize}
+
+Damit gäbe es insgesamt höchstens
+
+\[
+3+2=5
+\]
+
+Elemente.
+
+Dies widerspricht
+
+\[
+n=6.
+\]
+
+Also muss entweder mindestens \(4\)-mal Rot
+oder mindestens \(3\)-mal Blau vorkommen.
+
+\hfill $\square$
+
+\end{frame}
+
+\begin{frame}{3. Existenzaussagen}
+
 \textbf{Satz 3.3 (Ramsey-Zahlen)}
 
-\vspace{0.3cm}
+Nun werden nicht mehr die Elemente einer Menge gefärbt,
+sondern alle Paare von Elementen.
 
 Für \(k,l\ge 2\) existiert eine kleinste Zahl
 
@@ -1533,12 +1668,10 @@ R(k,l),
 
 so dass gilt:
 
-\vspace{0.3cm}
-
 Werden alle Paare einer \(n\)-elementigen Menge mit
 
 \[
-n\ge R(k,l)
+n \ge R(k,l)
 \]
 
 rot oder blau gefärbt, dann existiert
@@ -1550,7 +1683,35 @@ rot oder blau gefärbt, dann existiert
 
 \end{frame}
 
+\begin{frame}{3. Existenzaussagen}
 
+\textbf{Beispiel:} \(R(3,3)=6\)
+
+\medskip
+
+Wir färben die Kanten eines vollständigen Graphen
+mit Rot und Blau.
+
+\medskip
+
+\(R(3,3)\) bezeichnet die kleinste Zahl \(n\), so dass
+jede Rot-Blau-Färbung immer ein rotes oder blaues Dreieck enthält.
+
+\medskip
+
+\textbf{(a) Fünfeck (\(n=5\))}
+
+Es gibt eine Färbung ohne einfarbiges Dreieck,
+also gilt \(R(3,3)>5\).
+
+\medskip
+
+\textbf{(b) Sechseck (\(n=6\))}
+
+Jede Färbung enthält ein rotes oder blaues Dreieck,
+also gilt \(R(3,3)=6\).
+
+\end{frame}
 
 \begin{frame}{Quellenverzeichnis}
 
