@@ -1002,77 +1002,6 @@ p(A_1,\ldots,A_m)
 
 \end{frame}
 
-% Beweis Satz 2.4
-\begin{frame}{2. Diskrete Wahrscheinlichkeitsrechnung}
-
-\textbf{Beweis von Satz 2.4}
-
-\vspace{0.3cm}
-
-Seien \(A\subseteq\Omega_1\) und \(B\subseteq\Omega_2\).
-
-Dann gilt
-
-\[
-p(A,B)
-=
-\sum_{(\omega_1,\omega_2)\in A\times B}
-p(\omega_1,\omega_2).
-\]
-
-Wegen der Unabhängigkeit folgt
-
-\[
-p(\omega_1,\omega_2)
-=
-p(\omega_1)\,p(\omega_2).
-\]
-
-Damit erhalten wir
-
-\[
-p(A,B)
-=
-\sum_{\omega_1\in A}
-\sum_{\omega_2\in B}
-p(\omega_1)p(\omega_2).
-\]
-
-\end{frame}
-
-% Beweis Satz 2.4 Fortsetzung
-\begin{frame}{2. Diskrete Wahrscheinlichkeitsrechnung}
-
-\textbf{Beweis von Satz 2.4 (Fortsetzung)}
-
-\[
-p(A,B)
-=
-\sum_{\omega_1\in A}
-\sum_{\omega_2\in B}
-p(\omega_1)p(\omega_2)
-\]
-
-\[
-=
-\left(
-\sum_{\omega_1\in A}p(\omega_1)
-\right)
-\left(
-\sum_{\omega_2\in B}p(\omega_2)
-\right).
-\]
-
-Nach Definition der Wahrscheinlichkeit ergibt sich
-
-\[
-p(A,B)=p(A)\,p(B).
-\]
-
-\hfill\(\square\)
-
-\end{frame}
-
 \begin{frame}{2. Diskrete Wahrscheinlichkeitsrechnung}
 
 \textbf{Definition 2.5 (Zufallsvariable)}
@@ -1592,36 +1521,6 @@ a_{k+1}+a_{k+2}+\cdots+a_l.
 
 \begin{frame}{3. Existenzaussagen}
 
-\textbf{Satz 3.2 (Ramsey-Eigenschaft)}
-
-\vspace{0.3cm}
-
-Seien \(l_1,\dots,l_r\in\mathbb N\).
-
-Dann existiert eine kleinste Zahl
-
-\[
-n=l(l_1,\dots,l_r),
-\]
-
-so dass für jede \(r\)-Färbung einer \(n\)-elementigen Menge
-mindestens eine Farbe \(i\) eine Teilmenge der Größe \(l_i\)
-enthält.
-
-\vspace{0.4cm}
-
-Für
-
-\[
-l_1=\cdots=l_r=2
-\]
-
-erhält man das Schubfachprinzip.
-
-\end{frame}
-
-\begin{frame}{3. Existenzaussagen}
-
 \textbf{Satz 3.3 (Ramsey-Zahlen)}
 
 \vspace{0.3cm}
@@ -1651,35 +1550,7 @@ rot oder blau gefärbt, dann existiert
 
 \end{frame}
 
-\begin{frame}{3. Existenzaussagen}
 
-\textbf{Beispiel: \(R(3,3)=6\)}
-
-\vspace{0.3cm}
-
-Interpretation:
-
-\begin{itemize}
-\item Rot: Zwei Personen kennen sich.
-\item Blau: Zwei Personen kennen sich nicht.
-\end{itemize}
-
-\vspace{0.3cm}
-
-Dann gilt:
-
-\[
-R(3,3)=6.
-\]
-
-In jeder Gruppe von sechs Personen gibt es stets
-
-\begin{itemize}
-\item entweder drei Personen, die sich gegenseitig kennen,
-\item oder drei Personen, die sich gegenseitig nicht kennen.
-\end{itemize}
-
-\end{frame}
 
 \begin{frame}{Quellenverzeichnis}
 
