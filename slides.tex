@@ -797,60 +797,7 @@ kS_{n-1,k}.
 
 \textbf{Beweis:}
 
-Sei \(N\) eine \(n\)-elementige Menge und \(a\in N\) fest gewählt.
-
-Wir betrachten alle \(k\)-Partitionen von \(N\).
-
-Wir unterscheiden zwei Fälle:
-
-\begin{itemize}
-    \item \textbf{Fall 1:} \(a\) bildet einen Einzelblock.
-
-    Dann bleiben \(n-1\) Elemente übrig, die in \(k-1\) Blöcke zerlegt werden.
-
-    \[
-    S_{n-1,k-1}
-    \]
-
-    Möglichkeiten.
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{1. Rekursionen}
-
-\textbf{Beweis von Satz 1.14 (Fortsetzung)}
-
-\begin{itemize}
-
-    \item \textbf{Fall 2:} \(a\) liegt zusammen mit anderen Elementen in einem Block.
-
-    Dann bleiben \(n-1\) Elemente übrig, die in \(k\) Blöcke zerlegt werden.
-
-    \[
-    S_{n-1,k}
-    \]
-
-    Möglichkeiten.
-
-    Im zweiten Fall kann \(a\) zu einem der \(k\) Blöcke hinzugefügt werden.
-
-    Damit ergeben sich
-
-    \[
-    kS_{n-1,k}
-    \]
-
-    Möglichkeiten.
-    
-\end{itemize}   
-
-\vspace{0.3cm}
-
-Die Addition der beiden Fälle ergibt \(S_{n,k}=S_{n-1,k-1}+kS_{n-1,k}\).
-
-\hfill\(\square\)
+Analog zu Stirling-Zahlen erster Art.
 
 \end{frame}
 
@@ -870,24 +817,6 @@ Die Addition der beiden Fälle ergibt \(S_{n,k}=S_{n-1,k-1}+kS_{n-1,k}\).
 \vspace{0.4cm}
 
 3. Existenzaussagen
-
-\end{frame}
-
-\begin{frame}{2. Diskrete Wahrscheinlichkeitsrechnung}
-
-\textbf{Motivation}
-
-\begin{itemize}
-    \item Berechnung von Wahrscheinlichkeiten bei Zufallsexperimenten
-    \item Grundlage für Zufallsalgorithmen
-    \item Anwendungen in der Kryptographie
-    \item Modellierung zufälliger Prozesse
-\end{itemize}
-
-\vspace{0.3cm}
-
-Die diskrete Wahrscheinlichkeitsrechnung basiert auf
-Abzählmethoden der Kombinatorik.
 
 \end{frame}
 
@@ -1573,7 +1502,7 @@ Seien \(a_1,a_2,\ldots,a_n\in\mathbb Z.\)
 
 \vspace{0.2cm}
 
-Frage: Existiert eine Teilmenge dieser Zahlen,
+Frage: Existiert immer eine Teilmenge dieser Zahlen,
 deren Summe durch \(n\) teilbar ist?
 
 \vspace{0.3cm}
@@ -1724,44 +1653,6 @@ rot oder blau gefärbt, dann existiert
 
 \begin{frame}{3. Existenzaussagen}
 
-\textbf{Beweisidee}
-
-\vspace{0.3cm}
-
-Für Ramsey-Zahlen gilt die Rekursion
-
-\[
-R(k,l)
-\le
-R(k-1,l)+R(k,l-1).
-\]
-
-\vspace{0.4cm}
-
-Dies erinnert an die Pascalsche Rekursion
-
-\[
-\binom{n}{k}
-=
-\binom{n-1}{k-1}
-+
-\binom{n-1}{k}.
-\]
-
-\vspace{0.4cm}
-
-Daraus folgt insbesondere
-
-\[
-R(k,l)
-\le
-\binom{k+l-2}{k-1}.
-\]
-
-\end{frame}
-
-\begin{frame}{3. Existenzaussagen}
-
 \textbf{Beispiel: \(R(3,3)=6\)}
 
 \vspace{0.3cm}
@@ -1787,116 +1678,6 @@ In jeder Gruppe von sechs Personen gibt es stets
 \item entweder drei Personen, die sich gegenseitig kennen,
 \item oder drei Personen, die sich gegenseitig nicht kennen.
 \end{itemize}
-
-\end{frame}
-
-\begin{frame}{3. Existenzaussagen}
-
-\textbf{Definition 3.4 (Färbungsproblem)}
-
-\vspace{0.3cm}
-
-Sei \(F\) eine Familie von Mengen mit
-
-\[
-|A|=d
-\qquad (A\in F).
-\]
-
-\vspace{0.2cm}
-
-Gesucht ist eine Zweifärbung der Elemente (rot/blau), sodass
-keine Menge \(A\in F\) einfarbig wird.
-
-\vspace{0.4cm}
-
-\textbf{Idee der probabilistischen Methode}
-
-\vspace{0.2cm}
-
-Statt ein Objekt direkt zu konstruieren, betrachten wir eine
-zufällige Auswahl aller möglichen Objekte.
-
-\vspace{0.2cm}
-
-Zeigt man, dass die Wahrscheinlichkeit für ein Objekt mit den
-gewünschten Eigenschaften positiv ist, so muss ein solches Objekt
-existieren.
-
-\vspace{0.4cm}
-
-Wir definieren \(m(d)=\min\{|F|:\,F \text{ ist nicht 2-färbbar}\}.\)
-
-\end{frame}
-
-\begin{frame}{3. Existenzaussagen}
-
-\textbf{Satz 3.5 (Erdős)}
-
-\vspace{0.2cm}
-
-Für \(d\ge 1\) gilt \(m(d)>2^{d-1}.\)
-
-\vspace{0.3cm}
-
-\textbf{Beweis.}
-
-Sei \(F\) eine Familie von Mengen mit
-
-\[|F|<2^{d-1}\] und \(|A|=d\qquad (A\in F).\)
-
-Wir färben jedes Element unabhängig mit
-Wahrscheinlichkeit \(\frac12\) rot bzw. blau.
-
-\vspace{0.3cm}
-
-Für \(A\in F\) sei \(E_A\) das Ereignis,
-dass \(A\) einfarbig wird.
-
-Da alle \(d\) Elemente dieselbe Farbe besitzen müssen,
-
-\[
-p(E_A)
-=
-\left(\frac12\right)^d
-+
-\left(\frac12\right)^d
-=
-\frac1{2^{d-1}}.
-\]
-
-\end{frame}
-
-\begin{frame}{3. Existenzaussagen}
-
-\textbf{Beweis von Satz 3.5 (Fortsetzung)}
-
-\vspace{0.3cm}
-
-Mit der Vereinigungsabschätzung folgt
-
-\[
-p\!\left(\bigcup_{A\in F}E_A\right)
-\le
-\sum_{A\in F}p(E_A)
-=
-\frac{|F|}{2^{d-1}}.
-\]
-
-Wegen \(|F|<2^{d-1}\):\[
-p\!\left(\bigcup_{A\in F}E_A\right)<1
-\quad\Longrightarrow\quad
-p\!\left(\left(\bigcup_{A\in F}E_A\right)^c\right)>0.
-\]
-
-\vspace{0.3cm}
-
-Folglich existiert eine Färbung, bei der
-kein \(A\in F\) einfarbig ist.
-
-Also ist \(F\) 2-färbbar und daher \(m(d)>2^{d-1}.\)
-
-\hfill\(\square\)
 
 \end{frame}
 
