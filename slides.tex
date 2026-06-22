@@ -686,60 +686,7 @@ s_{n-1,k-1}
 
 \textbf{Beweis:}
 
-Sei \(N\) eine \(n\)-elementige Menge und \(a\in N\) fest gewählt.
-
-Wir unterscheiden zwei Fälle:
-
-\begin{itemize}
-    \item \textbf{Fall 1:} \((a)\) ist ein eigener Zyklus.
-
-    Dann bilden die restlichen \(n-1\) Elemente genau \(k-1\) Zyklen.
-
-    \[
-    s_{n-1,k-1}
-    \]
-
-    Möglichkeiten.
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{1. Rekursionen}
-
-\textbf{Beweis von Satz 1.12 (Fortsetzung)}
-
-\begin{itemize}
-
-    \item \textbf{Fall 2:} \(a\) liegt mit anderen Elementen in einem Zyklus.
-
-    Dann bilden die restlichen \(n-1\) Elemente weiterhin \(k\) Zyklen.
-
-    Dafür gibt es
-
-    \[
-    s_{n-1,k}
-    \]
-
-    Möglichkeiten.
-
-    Im zweiten Fall kann \(a\) vor jedem der übrigen \(n-1\) Elemente eingefügt werden.
-
-    Damit ergeben sich
-
-    \[
-    (n-1)s_{n-1,k}
-    \]
-
-    Möglichkeiten.
-
-\end{itemize}
-
-\vspace{0.3cm}
-
-Addition der beiden Fälle ergibt \(s_{n,k}=s_{n-1,k-1}+(n-1)s_{n-1,k}\)
-
-\hfill\(\square\)
+Analog zu Stirling-Zahlen zweiter Art. 
 
 \end{frame}
 
@@ -783,23 +730,73 @@ S_{3,2}=3.
 
 \textbf{Satz 1.14 (Stirling-Zahlen zweiter Art)}
 
-\vspace{0.2cm}
+\medskip
 
 Für \(n,k>0\) gilt
 
 \[
-S_{n,k}
-=
-S_{n-1,k-1}
-+
-kS_{n-1,k}.
+S_{n,k}=S_{n-1,k-1}+kS_{n-1,k}.
 \]
 
-\vspace{0.3cm}
+\bigskip
 
 \textbf{Beweis:}
 
-Analog zu Stirling-Zahlen erster Art.
+Sei \(N\) eine \(n\)-elementige Menge und \(a\in N\) fest gewählt.
+
+Wir betrachten alle \(k\)-Partitionen von \(N\).
+
+Wir unterscheiden zwei Fälle:
+
+\begin{itemize}
+\item[\(\blacktriangleright\)] \textbf{Fall 1:} \(a\) bildet einen Einzelblock.
+
+Dann bleiben \(n-1\) Elemente übrig, die in \(k-1\) Blöcke zerlegt werden.
+
+\[
+S_{n-1,k-1}
+\]
+
+Möglichkeiten.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{1. Rekursionen}
+
+\textbf{Beweis von Satz 1.14 (Fortsetzung)}
+
+\begin{itemize}
+\item[\(\blacktriangleright\)] \textbf{Fall 2:} \(a\) liegt zusammen mit anderen Elementen in einem Block.
+\end{itemize}
+
+Dann bleiben \(n-1\) Elemente übrig, die in \(k\) Blöcke zerlegt werden.
+
+\[
+S_{n-1,k}
+\]
+
+Möglichkeiten.
+
+\medskip
+
+Im zweiten Fall kann \(a\) zu einem der \(k\) Blöcke hinzugefügt werden.
+
+Damit ergeben sich
+
+\[
+kS_{n-1,k}
+\]
+
+Möglichkeiten.
+
+\bigskip
+
+Die Addition der beiden Fälle ergibt
+
+\[
+S_{n,k}=S_{n-1,k-1}+kS_{n-1,k}.
+\]
 
 \end{frame}
 
@@ -912,9 +909,9 @@ Seien \(A,B,A_1,A_2,\ldots\subseteq\Omega\) Ereignisse. Es gilt:
 A\subseteq B \;\Longrightarrow\; p(A)\leq p(B).
 \]
 
-\textbf{(b)}
+\textbf{(d)}
 \[
-p(A\cup B)=p(A)+p(B)-p(A\cap B).
+p(\Omega\setminus A)=1-p(A).
 \]
 
 \textbf{(c)}
@@ -924,16 +921,16 @@ A=\bigcup_i A_i \text{ Partition }
 p(A)=\sum_i p(A_i).
 \]
 
-\textbf{(d)}
-\[
-p(\Omega\setminus A)=1-p(A).
-\]
-
 \textbf{(e)}
 \[
 p\!\left(\bigcup_i A_i\right)
 \leq
 \sum_i p(A_i).
+\]
+
+\textbf{(b)}
+\[
+p(A\cup B)=p(A)+p(B)-p(A\cap B).
 \]
 
 \end{frame}
